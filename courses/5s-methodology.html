@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="5S Workplace Organisation program — implement and sustain 5S in finance and back-office environments to eliminate waste at its source.">
+  <title>5S Workplace Organisation | MBS Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .course-detail-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; padding: 64px 0; }
+    .course-sticky-card { position: sticky; top: 96px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+    .sticky-card-header { background: linear-gradient(135deg, #064E3B, #059669); padding: 28px; text-align: center; }
+    .sticky-card-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .sticky-card-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; font-style: italic; color: #fff; }
+    .sticky-card-body { padding: 24px; }
+    .sticky-meta { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .sticky-meta-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .sticky-meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .sticky-meta-label { font-size: 0.8rem; color: var(--text-3); }
+    .sticky-meta-value { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+
+    .objectives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .objective-item { display: flex; align-items: flex-start; gap: 10px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px; }
+    .objective-check { color: var(--teal); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+    .objective-item p { font-size: 0.87rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+
+    .module-accordion { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+    .module-item-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+    .module-header { display: flex; align-items: center; gap: 16px; padding: 18px 20px; cursor: pointer; user-select: none; }
+    .module-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--teal); width: 28px; flex-shrink: 0; }
+    .module-title-text { font-weight: 600; font-size: 0.95rem; color: var(--text); flex: 1; }
+    .module-duration { font-size: 0.8rem; color: var(--text-3); flex-shrink: 0; }
+    .module-body { padding: 0 20px 18px 64px; display: none; }
+    .module-item-block.open .module-body { display: block; }
+    .module-lessons { display: flex; flex-direction: column; gap: 6px; }
+    .module-lesson { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--text-2); padding: 6px 0; }
+    .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-md); flex-shrink: 0; }
+
+    .audience-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .audience-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--bg-alt); border-radius: var(--r-sm); font-size: 0.9rem; color: var(--text-2); }
+    .audience-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    .five-s-pillars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 24px 0; }
+    .pillar-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 14px; text-align: center; }
+    .pillar-letter { font-family: var(--font-display); font-size: 2rem; font-weight: 700; font-style: italic; color: var(--teal); line-height: 1; margin-bottom: 6px; }
+    .pillar-word { font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .pillar-desc { font-size: 0.72rem; color: var(--text-3); line-height: 1.5; }
+
+    @media (max-width: 960px) { .course-detail-layout { grid-template-columns: 1fr; } .course-sticky-card { position: static; } .objectives-grid { grid-template-columns: 1fr; } .five-s-pillars { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px) { .five-s-pillars { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-initials">MBS</span>
+        <span class="brand-name">Academy</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../pages/about.html" class="nav-link">About</a></li>
+        <li><a href="../pages/courses.html" class="nav-link active">Training</a></li>
+        <li><a href="../pages/case-studies.html" class="nav-link">Case Studies</a></li>
+        <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="../pages/contact.html" class="btn btn-primary nav-cta">Get in touch</a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <span class="eyebrow">5S · Process Excellence · Workplace Organisation · Lean</span>
+          <h1>5S Workplace Organisation</h1>
+          <p>Most organisations attempt 5S and abandon it within months. This program teaches not just the five steps — but the implementation logic, the sustainability mechanisms, and the mindset shift that separates a 5S initiative that lasts from one that fades after the first audit. Built from direct application in both industrial and finance back-office environments.</p>
+          <div class="hero-actions">
+            <a href="../pages/contact.html" class="btn btn-white btn-lg">Enrol or inquire</a>
+            <a href="#modules" class="btn btn-ghost-white btn-lg">View modules</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="course-detail-layout">
+
+          <!-- Main content -->
+          <div>
+
+            <div class="section-label">Program overview</div>
+            <h2 class="section-title">What this program covers.</h2>
+            <p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:20px;">
+              5S is the most misunderstood tool in the Lean toolkit. Most implementations stop at Sort and Set in Order — the visible, easy part. The real value comes from Standardise and Sustain, which require cultural commitment and management systems that most teams have never built. This program covers all five pillars in depth, with a specific focus on making 5S stick in finance, administrative, and back-office environments where "workplace organisation" looks very different from a factory floor.
+            </p>
+            <p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:32px;">
+              You will leave with a complete 5S implementation roadmap, audit frameworks, visual management standards, and the team engagement tools needed to sustain the gains long after the initial rollout.
+            </p>
+
+            <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:14px;">The five pillars</div>
+            <div class="five-s-pillars">
+              <div class="pillar-card">
+                <div class="pillar-letter">1S</div>
+                <div class="pillar-word">Sort</div>
+                <div class="pillar-desc">Remove everything that is not needed. Apply the Red Tag method.</div>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-letter">2S</div>
+                <div class="pillar-word">Set in Order</div>
+                <div class="pillar-desc">A place for everything, everything in its place. Visual management.</div>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-letter">3S</div>
+                <div class="pillar-word">Shine</div>
+                <div class="pillar-desc">Clean to inspect. Detect problems through daily discipline.</div>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-letter">4S</div>
+                <div class="pillar-word">Standardise</div>
+                <div class="pillar-desc">Create the systems that make the first 3S self-sustaining.</div>
+              </div>
+              <div class="pillar-card">
+                <div class="pillar-letter">5S</div>
+                <div class="pillar-word">Sustain</div>
+                <div class="pillar-desc">Build the culture and audit systems that prevent regression.</div>
+              </div>
+            </div>
+
+            <h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">Who this is for</h3>
+            <div class="audience-list">
+              <div class="audience-item"><span class="audience-icon">🏢</span> Finance and back-office team leads wanting to reduce chaos, rework, and search time</div>
+              <div class="audience-item"><span class="audience-icon">⚙️</span> Operations and process improvement professionals rolling out Lean in service environments</div>
+              <div class="audience-item"><span class="audience-icon">📋</span> Lean Six Sigma practitioners at Green Belt level looking to deepen their 5S facilitation skills</div>
+              <div class="audience-item"><span class="audience-icon">🎯</span> Managers responsible for team productivity, quality, and audit readiness</div>
+              <div class="audience-item"><span class="audience-icon">📊</span> Shared services and SSC/GBS professionals implementing standardisation programmes</div>
+            </div>
+
+            <h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;" id="objectives">What you will be able to do</h3>
+            <div class="objectives-grid">
+              <div class="objective-item"><span class="objective-check">✓</span><p>Plan and facilitate a 5S implementation from kick-off to Sustain in any office environment</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Apply the Red Tag method and run a Sort event that achieves real, visible results</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Design visual management standards for digital and physical workspaces</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Build 5S audit checklists and scoring systems that teams will actually use</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Create the management routines that sustain 5S gains beyond the first 3 months</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Adapt 5S principles to digital environments: shared drives, inboxes, and data workflows</p></div>
+            </div>
+
+            <h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;" id="modules">Program modules</h3>
+            <div class="module-accordion">
+
+              <div class="module-item-block open">
+                <div class="module-header">
+                  <span class="module-num">01</span>
+                  <span class="module-title-text">Why Most 5S Implementations Fail — and the Framework That Works</span>
+                  <span class="module-duration">~70 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>The origin of 5S: Toyota Production System and the concept of visual workplace</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Why 5S fades: the three most common implementation failures</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>5S in service and finance environments vs. manufacturing — the key differences</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>The full 5S implementation roadmap: from assessment to Sustain</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Getting leadership buy-in: the business case for 5S in back-office settings</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-item-block">
+                <div class="module-header">
+                  <span class="module-num">02</span>
+                  <span class="module-title-text">Sort (1S) — Eliminating What Doesn't Belong</span>
+                  <span class="module-duration">~65 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>Identifying necessary vs. unnecessary items: the decision matrix</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>The Red Tag method: how to run a Sort event step by step</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Applying Sort to digital environments: files, emails, shared drives, and inboxes</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Dealing with resistance: "we might need it one day" and other common objections</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Sort event templates and checklists (ready to use)</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-item-block">
+                <div class="module-header">
+                  <span class="module-num">03</span>
+                  <span class="module-title-text">Set in Order &amp; Shine (2S + 3S) — Visual Workplace and Inspection Through Cleaning</span>
+                  <span class="module-duration">~80 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>The principle of visual management: make the normal obvious, make the abnormal visible</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Designing workspace layouts: physical and digital "a place for everything"</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Labelling, colour coding, and shadow boarding for office environments</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Digital Set in Order: folder structures, file naming conventions, shared drive standards</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Shine as inspection: using the cleaning routine to detect problems before they escalate</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Daily 5-minute Shine routines that teams will actually maintain</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-item-block">
+                <div class="module-header">
+                  <span class="module-num">04</span>
+                  <span class="module-title-text">Standardise (4S) — Building Systems That Self-Sustain</span>
+                  <span class="module-duration">~75 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>What standardisation means in 5S — and why it is the hardest pillar to achieve</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Writing 5S standards that people can actually follow: format, language, visuals</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>One-Point Lessons (OPL): the tool for capturing and sharing best practices</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Designing the 5S zone map and assigning ownership</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Integrating 5S standards into onboarding and SOPs</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-item-block">
+                <div class="module-header">
+                  <span class="module-num">05</span>
+                  <span class="module-title-text">Sustain (5S) — Audit Systems, Culture, and Long-Term Governance</span>
+                  <span class="module-duration">~80 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>The Sustain paradox: why improvement without discipline always regresses</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Designing a 5S audit system: scoring rubrics, frequency, and escalation paths</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>The 5S board: visual tracking of scores, trends, and team accountability</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Leadership behaviours that reinforce 5S: the management routine toolkit</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Connecting 5S to KPIs: quality, productivity, and error rate metrics</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Running a 5S maturity assessment: where your team is and where to go next</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="callout callout-teal" style="margin-top:40px;">
+              <div class="callout-label">Built from industrial and finance application</div>
+              <p>This program draws from direct 5S implementation experience across iron ore operations at one of the world's largest mining companies and back-office finance environments at a major European multinational SSC. The challenges, failure patterns, and solutions covered here are the ones that actually appeared in real deployments — not the version described in a textbook.</p>
+            </div>
+
+          </div>
+
+          <!-- Sticky sidebar -->
+          <div>
+            <div class="course-sticky-card">
+              <div class="sticky-card-header">
+                <div class="sticky-card-icon">🗂️</div>
+                <div class="sticky-card-title">5S Workplace Organisation</div>
+              </div>
+              <div class="sticky-card-body">
+                <div class="sticky-meta">
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Level</span>
+                    <span class="sticky-meta-value">Foundation → Intermediate</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Duration</span>
+                    <span class="sticky-meta-value">~6 hours</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Modules</span>
+                    <span class="sticky-meta-value">5 modules</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Delivery</span>
+                    <span class="sticky-meta-value">Online · In-person available</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Prerequisites</span>
+                    <span class="sticky-meta-value">None</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Certificate</span>
+                    <span class="sticky-meta-value">On completion</span>
+                  </div>
+                </div>
+                <a href="../pages/contact.html" class="btn btn-primary sticky-cta btn-lg">Enrol or inquire</a>
+                <p style="font-size:0.78rem; color:var(--text-3); text-align:center; margin-top:12px;">Team delivery available — contact for pricing</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container">
+        <div class="cta-strip-inner">
+          <div class="cta-strip-text">
+            <h2>Ready to build a workplace that works?</h2>
+            <p>Enrol in the 5S Workplace Organisation program or explore the full training catalog.</p>
+          </div>
+          <div class="cta-strip-actions">
+            <a href="../pages/contact.html" class="btn btn-white btn-lg">Get in touch</a>
+            <a href="../pages/courses.html" class="btn btn-ghost-white btn-lg">View all programs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">MBS Academy</div>
+          <p>Executive training in Finance Transformation, Process Excellence, SAP, and Intelligent Automation.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/marlonbsiqueira/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://www.youtube.com/@marlonbsiqueira468" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Platform</h4>
+            <a href="../pages/about.html">About</a>
+            <a href="../pages/courses.html">Training</a>
+            <a href="../pages/case-studies.html">Case Studies</a>
+            <a href="../pages/contact.html">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Training</h4>
+            <a href="finance-transformation.html">Finance Transformation</a>
+            <a href="lean-six-sigma.html">Lean Six Sigma</a>
+            <a href="5s-methodology.html">5S Methodology</a>
+            <a href="kaizen.html">Kaizen</a>
+            <a href="lean-thinking.html">Pensamento Enxuto</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="https://www.linkedin.com/in/marlonbsiqueira/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.youtube.com/@marlonbsiqueira468" target="_blank" rel="noopener">YouTube</a>
+            <a href="../pages/contact.html">Training inquiry</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Marlon B Siqueira · MBS Academy. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="../javascript/main.js"></script>
+</body>
+</html>
