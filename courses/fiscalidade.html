@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fiscalidade & Compliance Fiscal — programa prático para profissionais de finanças dominarem IVA, IRC, obrigações declarativas e gestão de risco fiscal em ambientes multinacionais.">
+  <title>Fiscalidade & Compliance Fiscal | MBS Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <style>
+    .course-detail-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; padding: 64px 0; }
+    .course-sticky-card { position: sticky; top: 96px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+    .sticky-card-header { background: linear-gradient(135deg, #1a0a2e, #7C3AED); padding: 28px; text-align: center; }
+    .sticky-card-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .sticky-card-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; font-style: italic; color: #fff; }
+    .sticky-card-body { padding: 24px; }
+    .sticky-meta { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .sticky-meta-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .sticky-meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .sticky-meta-label { font-size: 0.8rem; color: var(--text-3); }
+    .sticky-meta-value { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+
+    .objectives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .objective-item { display: flex; align-items: flex-start; gap: 10px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px; }
+    .objective-check { color: var(--teal); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+    .objective-item p { font-size: 0.87rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+
+    .module-accordion { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+    .module-item-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+    .module-header { display: flex; align-items: center; gap: 16px; padding: 18px 20px; cursor: pointer; user-select: none; }
+    .module-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--teal); width: 28px; flex-shrink: 0; }
+    .module-title-text { font-weight: 600; font-size: 0.95rem; color: var(--text); flex: 1; }
+    .module-duration { font-size: 0.8rem; color: var(--text-3); flex-shrink: 0; }
+    .module-body { padding: 0 20px 18px 64px; display: none; }
+    .module-item-block.open .module-body { display: block; }
+    .module-lessons { display: flex; flex-direction: column; gap: 6px; }
+    .module-lesson { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--text-2); padding: 6px 0; }
+    .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-md); flex-shrink: 0; }
+
+    .audience-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .audience-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--bg-alt); border-radius: var(--r-sm); font-size: 0.9rem; color: var(--text-2); }
+    .audience-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    .tax-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0; }
+    .tax-pillar { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px; }
+    .tax-pillar-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+    .tax-pillar-title { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+    .tax-pillar-desc { font-size: 0.8rem; color: var(--text-3); line-height: 1.55; }
+
+    @media (max-width: 960px) { .course-detail-layout { grid-template-columns: 1fr; } .course-sticky-card { position: static; } .objectives-grid { grid-template-columns: 1fr; } .tax-pillars { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .tax-pillars { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <span class="brand-initials">MBS</span>
+        <span class="brand-name">Academy</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../pages/about.html" class="nav-link">About</a></li>
+        <li><a href="../pages/courses.html" class="nav-link active">Training</a></li>
+        <li><a href="../pages/case-studies.html" class="nav-link">Case Studies</a></li>
+        <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="../pages/contact.html" class="btn btn-primary nav-cta">Falar connosco</a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <span class="eyebrow">Fiscalidade · IVA · IRC · Compliance · Multinacionais</span>
+          <h1>Fiscalidade &amp; Compliance Fiscal</h1>
+          <p>A maioria dos profissionais de finanças trabalha com impostos diariamente — mas poucos têm uma compreensão estruturada do enquadramento fiscal que lhes permita identificar riscos, questionar classificações e comunicar com confiança com equipas fiscais e auditores. Este programa preenche essa lacuna: enquadramento fiscal prático, aplicado ao contexto de finanças operacionais e ambientes multinacionais.</p>
+          <div class="hero-actions">
+            <a href="../pages/contact.html" class="btn btn-white btn-lg">Inscrever ou saber mais</a>
+            <a href="#modules" class="btn btn-ghost-white btn-lg">Ver módulos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="course-detail-layout">
+
+          <!-- Main content -->
+          <div>
+
+            <div class="section-label">Visão geral do programa</div>
+            <h2 class="section-title">O que este programa cobre.</h2>
+            <p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:20px;">
+              A fiscalidade é frequentemente tratada como uma especialidade separada — algo que se delega ao departamento fiscal e não se questiona. Esta abordagem tem um custo: profissionais de finanças que não compreendem o enquadramento fiscal cometem erros de classificação, perdem oportunidades de otimização e ficam expostos em auditorias. Este programa não forma fiscalistas — forma profissionais de finanças que entendem o suficiente para trabalhar bem com fiscalistas, identificar riscos e tomar melhores decisões.
+            </p>
+            <p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:32px;">
+              O conteúdo foca-se no enquadramento português e europeu, com atenção especial aos temas transversais em ambientes multinacionais: IVA intracomunitário, preços de transferência, tributação de grupos e obrigações declarativas.
+            </p>
+
+            <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:14px;">As três grandes áreas cobertas</div>
+            <div class="tax-pillars">
+              <div class="tax-pillar">
+                <div class="tax-pillar-label">Módulos 1–2</div>
+                <div class="tax-pillar-title">IVA — Imposto sobre o Valor Acrescentado</div>
+                <div class="tax-pillar-desc">Regras gerais, taxas, isenções, IVA intracomunitário, dedutibilidade e obrigações declarativas.</div>
+              </div>
+              <div class="tax-pillar">
+                <div class="tax-pillar-label">Módulos 3–4</div>
+                <div class="tax-pillar-title">IRC — Imposto sobre o Rendimento das Pessoas Coletivas</div>
+                <div class="tax-pillar-desc">Apuramento do lucro tributável, benefícios fiscais, deduções, tributação de grupos e RETGS.</div>
+              </div>
+              <div class="tax-pillar">
+                <div class="tax-pillar-label">Módulos 5–6</div>
+                <div class="tax-pillar-title">Compliance &amp; Gestão de Risco Fiscal</div>
+                <div class="tax-pillar-desc">Obrigações declarativas, preços de transferência, risco fiscal em multinacionais e auditorias.</div>
+              </div>
+            </div>
+
+            <h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">Para quem é este programa</h3>
+            <div class="audience-list">
+              <div class="audience-item"><span class="audience-icon">📊</span> Controllers e finance managers que precisam de compreender o enquadramento fiscal das suas operações</div>
+              <div class="audience-item"><span class="audience-icon">🏢</span> Profissionais de SSC/GBS com responsabilidades em operações multijurisdicionais</div>
+              <div class="audience-item"><span class="audience-icon">🔍</span> Equipas de compliance e auditoria interna que precisam de testar controlos de natureza fiscal</div>
+              <div class="audience-item"><span class="audience-icon">📋</span> Analistas financeiros que querem compreender o impacto fiscal nas demonstrações financeiras</div>
+              <div class="audience-item"><span class="audience-icon">🌍</span> Profissionais de finanças em empresas multinacionais com exposição a IVA intracomunitário</div>
+            </div>
+
+            <h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;" id="objectives">O que vai conseguir fazer</h3>
+            <div class="objectives-grid">
+              <div class="objective-item"><span class="objective-check">✓</span><p>Identificar corretamente o tratamento de IVA nas principais operações da empresa</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Compreender o apuramento do lucro tributável IRC e as principais correções fiscais</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Reconhecer exposições de risco fiscal e saber como as mitigar ou escalar</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Trabalhar com eficácia em ambientes de IVA intracomunitário e operações transfronteiriças</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Preparar e rever documentação para auditorias fiscais e inspeções da AT</p></div>
+              <div class="objective-item"><span class="objective-check">✓</span><p>Compreender os fundamentos de preços de transferência em grupos multinacionais</p></div>
+            </div>
+
+            <h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;" id="modules">Módulos do programa</h3>
+            <div class="module-accordion">
+
+              <div class="module-item-block open">
+                <div class="module-header">
+                  <span class="module-num">01</span>
+                  <span class="module-title-text">IVA — Fundamentos e Regras Gerais</span>
+                  <span class="module-duration">~80 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>O funcionamento do IVA: incidência, liquidação, dedução e entrega ao Estado</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Taxas de IVA em Portugal: taxa normal, intermédia e reduzida — o que se aplica onde</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Isenções de IVA: isenções simples vs. isenções completas e o seu impacto na dedutibilidade</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Regras de localização das operações: quando o IVA é português e quando não é</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Obrigações declarativas: declaração periódica, Declaração Recapitulativa, VIES</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-item-block">
+                <div class="module-header">
+                  <span class="module-num">02</span>
+                  <span class="module-title-text">IVA Intracomunitário e Operações Transfronteiriças</span>
+                  <span class="module-duration">~85 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>Aquisições e transmissões intracomunitárias: regras e documentação obrigatória</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Prestações de serviços transfronteiriças: regra geral B2B e B2C e as suas exceções</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Reverse Charge (autoliquidação): quando se aplica e como registar</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Importações e exportações: IVA na importação, isenções na exportação</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Erros mais comuns em operações intracomunitárias e como os evitar</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-item-block">
+                <div class="module-header">
+                  <span class="module-num">03</span>
+                  <span class="module-title-text">IRC — Apuramento do Lucro Tributável</span>
+                  <span class="module-duration">~90 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>Da contabilidade ao resultado fiscal: a lógica do Modelo 22</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Gastos aceites e não aceites fiscalmente: as principais variações permanentes</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Limitação à dedutibilidade de gastos de financiamento (EBITDA rule)</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Amortizações e depreciações fiscalmente aceites: taxas e regras</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Prejuízos fiscais: reporte e limitações em vigor</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-item-block">
+                <div class="module-header">
+                  <span class="module-num">04</span>
+                  <span class="module-title-text">Tributação de Grupos e Benefícios Fiscais</span>
+                  <span class="module-duration">~75 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>RETGS — Regime Especial de Tributação dos Grupos de Sociedades: como funciona</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Participation exemption: dividendos e mais-valias de partes sociais</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>SIFIDE, RFAI e outros benefícios fiscais ao investimento</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Tributação de dividendos e juros em contexto intragrupo</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Retenções na fonte: quando aplicar, taxas e obrigações declarativas</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-item-block">
+                <div class="module-header">
+                  <span class="module-num">05</span>
+                  <span class="module-title-text">Preços de Transferência em Ambientes Multinacionais</span>
+                  <span class="module-duration">~85 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>O princípio de plena concorrência (arm's length): o que significa na prática</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Métodos de preços de transferência: CUP, custo majorado, margem líquida e outros</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Obrigações documentais: dossier de preços de transferência e quem está obrigado</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Operações intragrupo mais comuns: serviços partilhados, royalties, financiamentos</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Riscos e correções: o que a AT verifica e como preparar a empresa</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="module-item-block">
+                <div class="module-header">
+                  <span class="module-num">06</span>
+                  <span class="module-title-text">Compliance Fiscal, Risco e Preparação para Auditorias</span>
+                  <span class="module-duration">~85 min</span>
+                </div>
+                <div class="module-body">
+                  <div class="module-lessons">
+                    <div class="module-lesson"><span class="lesson-dot"></span>Obrigações declarativas anuais: Modelo 22, IES, DMR e prazos</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>SAF-T e o que a AT consegue ver: implicações para a organização contabilística</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Mapeamento de risco fiscal: como identificar e priorizar exposições</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Preparação para inspeções tributárias: documentação, postura e gestão do processo</div>
+                    <div class="module-lesson"><span class="lesson-dot"></span>Construção de um calendário fiscal anual e sistema de controlo interno fiscal</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="callout callout-teal" style="margin-top:40px;">
+              <div class="callout-label">Construído a partir de experiência operacional real</div>
+              <p>Este programa foi desenvolvido a partir de experiência direta em operações financeiras multinacionais sujeitas a IVA em 30+ jurisdições europeias, controlo de preços de transferência em ambiente SSC/GBS, e preparação de documentação para auditorias fiscais em Portugal e outros países da UE. O conteúdo reflecte os desafios reais que aparecem no dia a dia das equipas de finanças — não a teoria abstracta dos manuais.</p>
+            </div>
+
+          </div>
+
+          <!-- Sticky sidebar -->
+          <div>
+            <div class="course-sticky-card">
+              <div class="sticky-card-header">
+                <div class="sticky-card-icon">📑</div>
+                <div class="sticky-card-title">Fiscalidade &amp; Compliance Fiscal</div>
+              </div>
+              <div class="sticky-card-body">
+                <div class="sticky-meta">
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Nível</span>
+                    <span class="sticky-meta-value">Foundation → Intermediate</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Duração</span>
+                    <span class="sticky-meta-value">~8 horas</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Módulos</span>
+                    <span class="sticky-meta-value">6 módulos</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Entrega</span>
+                    <span class="sticky-meta-value">Online · Presencial disponível</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Pré-requisitos</span>
+                    <span class="sticky-meta-value">Background em finanças</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Língua</span>
+                    <span class="sticky-meta-value">Português</span>
+                  </div>
+                  <div class="sticky-meta-row">
+                    <span class="sticky-meta-label">Certificado</span>
+                    <span class="sticky-meta-value">Na conclusão</span>
+                  </div>
+                </div>
+                <a href="../pages/contact.html" class="btn btn-primary sticky-cta btn-lg">Inscrever ou saber mais</a>
+                <p style="font-size:0.78rem; color:var(--text-3); text-align:center; margin-top:12px;">Entrega para equipas disponível — contacte para preço</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container">
+        <div class="cta-strip-inner">
+          <div class="cta-strip-text">
+            <h2>Pronto para dominar o enquadramento fiscal?</h2>
+            <p>Inscreva-se no programa de Fiscalidade ou explore o catálogo completo de formações.</p>
+          </div>
+          <div class="cta-strip-actions">
+            <a href="../pages/contact.html" class="btn btn-white btn-lg">Falar connosco</a>
+            <a href="../pages/courses.html" class="btn btn-ghost-white btn-lg">Ver todos os programas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">MBS Academy</div>
+          <p>Formação executiva em Finance Transformation, Process Excellence, SAP e Intelligent Automation.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/marlonbsiqueira/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://www.youtube.com/@marlonbsiqueira468" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Plataforma</h4>
+            <a href="../pages/about.html">Sobre</a>
+            <a href="../pages/courses.html">Formações</a>
+            <a href="../pages/case-studies.html">Casos de Estudo</a>
+            <a href="../pages/contact.html">Contacto</a>
+          </div>
+          <div class="footer-col">
+            <h4>Programas</h4>
+            <a href="finance-transformation.html">Finance Transformation</a>
+            <a href="fiscalidade.html">Fiscalidade</a>
+            <a href="budget-control.html">Budget Control</a>
+            <a href="sap-finance.html">SAP Finance Ops</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <a href="https://www.linkedin.com/in/marlonbsiqueira/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.youtube.com/@marlonbsiqueira468" target="_blank" rel="noopener">YouTube</a>
+            <a href="../pages/contact.html">Pedido de formação</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Marlon B Siqueira · MBS Academy. Todos os direitos reservados.</p></div>
+    </div>
+  </footer>
+
+  <script src="../javascript/main.js"></script>
+</body>
+</html>
