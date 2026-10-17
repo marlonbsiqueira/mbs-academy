@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<script>document.documentElement.classList.add("js")</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Programa de Finance Transformation — redesenhe a função financeira, de fábrica de relatórios a motor de decisão estratégica." name="description"/>
+<title>Finance Transformation | MBS Academy</title>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/finance-transformation.html" rel="canonical"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/courses/finance-transformation.html" hreflang="en" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/finance-transformation.html" hreflang="pt" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/courses/finance-transformation.html" hreflang="x-default" rel="alternate"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0B1629" name="theme-color"/>
+<meta content="Finance Transformation | MBS Academy" property="og:title"/>
+<meta content="Programa de Finance Transformation — redesenhe a função financeira, de fábrica de relatórios a motor de decisão estratégica." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/finance-transformation.html" property="og:url"/>
+<meta content="MBS Academy" property="og:site_name"/>
+<meta content="pt_PT" property="og:locale"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Plus+Jakarta+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/main.css" rel="stylesheet"/>
+<style>
+    .course-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: start;
+      padding: 64px 0;
+    }
+    .course-sticky-card {
+      position: sticky;
+      top: 96px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .sticky-card-header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-700));
+      padding: 28px;
+      text-align: center;
+    }
+    .sticky-card-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .sticky-card-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; font-style: italic; color: #fff; }
+    .sticky-card-body { padding: 24px; }
+    .sticky-meta { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .sticky-meta-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .sticky-meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .sticky-meta-label { font-size: 0.8rem; color: var(--text-3); }
+    .sticky-meta-value { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+    .sticky-cta { width: 100%; justify-content: center; display: flex; }
+
+    .objectives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .objective-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px;
+    }
+    .objective-check { color: var(--teal-ink); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+    .objective-item p { font-size: 0.87rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+
+    .module-accordion { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+    .module-item-block {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden;
+    }
+    .module-header {
+      display: flex; align-items: center; gap: 16px; padding: 18px 20px;
+      cursor: pointer; user-select: none;
+    }
+    .module-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--teal-ink); width: 28px; flex-shrink: 0; }
+    .module-title-text { font-weight: 600; font-size: 0.95rem; color: var(--text); flex: 1; }
+    .module-duration { font-size: 0.8rem; color: var(--text-3); flex-shrink: 0; }
+    .module-body { padding: 0 20px 18px 64px; display: none; }
+    .module-item-block.open .module-body { display: block; }
+    .module-lessons { display: flex; flex-direction: column; gap: 6px; }
+    .module-lesson { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--text-2); padding: 6px 0; }
+    .module-lesson a { color: var(--blue); font-weight: 500; text-decoration: none; }
+    .module-lesson a:hover { text-decoration: underline; }
+    .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-md); flex-shrink: 0; }
+
+    .audience-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .audience-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--bg-alt); border-radius: var(--r-sm); font-size: 0.9rem; color: var(--text-2); }
+    .audience-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    @media (max-width: 960px) {
+      .course-detail-layout { grid-template-columns: 1fr; }
+      .course-sticky-card { position: static; }
+      .objectives-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" id="site-header">
+<nav class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="brand-initials">MBS</span>
+<span class="brand-name">Academy</span>
+</a>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="../index.html">Início</a></li>
+<li><a class="nav-link" href="../pages/about.html">Sobre</a></li>
+<li><a class="nav-link active" href="../pages/courses.html">Formação</a></li>
+<li><a class="nav-link" href="../pages/case-studies.html">Casos de Estudo</a></li>
+<li><a class="nav-link" href="../pages/contact.html">Contacto</a></li>
+</ul>
+<div aria-label="Língua" class="lang-switch" role="group"><a data-lang-link="en" href="../../courses/finance-transformation.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang-link="pt" href="finance-transformation.html" hreflang="pt" lang="pt">PT</a></div>
+<a class="btn btn-primary nav-cta" href="../pages/contact.html">Falar connosco</a>
+<button aria-label="Abrir/fechar navegação" class="mobile-toggle" id="mobile-toggle">
+<span></span><span></span><span></span>
+</button>
+</nav>
+</header>
+<main>
+<section class="page-hero">
+<div class="container">
+<div class="page-hero-inner">
+<span class="eyebrow">Finanças · Transformação · Estratégia</span>
+<h1>Finance Transformation</h1>
+<p>Redesenhe a função financeira, de fábrica de relatórios a motor de decisão estratégica. Assente em mais de 12 anos de trabalho real de transformação financeira em organizações multinacionais.</p>
+<div class="hero-actions">
+<a class="btn btn-white btn-lg" href="../pages/contact.html">Inscrever ou saber mais</a>
+<a class="btn btn-ghost-white btn-lg" href="#modules">Ver módulos</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="course-detail-layout">
+<!-- Main content -->
+<div>
+<div class="section-label">Visão geral do programa</div>
+<h2 class="section-title">O que este programa cobre.</h2>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:32px;">A maioria das equipas financeiras é excelente a registar o que aconteceu. Este programa ensina a construir as estruturas, os processos e as ferramentas que tornam as finanças uma função virada para o futuro e de apoio à decisão — com a confiança da liderança e o respeito de toda a organização.</p>
+<h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin-bottom:20px;">Para quem é</h3>
+<div class="audience-list">
+<div class="audience-item"><span class="audience-icon">👔</span> Finance managers e controllers que querem progredir</div>
+<div class="audience-item"><span class="audience-icon">📊</span> CFOs e diretores financeiros a redesenhar a sua função</div>
+<div class="audience-item"><span class="audience-icon">⚙️</span> Líderes de operações que precisam de trabalhar bem com as finanças</div>
+<div class="audience-item"><span class="audience-icon">🔄</span> Responsáveis de transformação com as finanças no âmbito</div>
+</div>
+<h3 id="objectives" style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">O que vai conseguir fazer</h3>
+<div class="objectives-grid">
+<div class="objective-item"><span class="objective-check">✓</span><p>Diagnosticar a função financeira atual e identificar as oportunidades de melhoria de maior impacto</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Desenhar e implementar um framework de KPIs e dashboards alinhado com as decisões da liderança</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Aplicar as normas IFRS e SOX de forma prática e relevante para as operações</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Redesenhar os processos de orçamentação e previsão para ganhar rapidez e precisão</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Identificar e eliminar trabalho manual através do redesenho de processos e da automação</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Construir o business case para iniciativas de transformação financeira</p></div>
+</div>
+<h3 id="modules" style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">Módulos do programa</h3>
+<div class="module-accordion">
+<div class="module-item-block open">
+<div class="module-header">
+<span class="module-num">01</span>
+<span class="module-title-text">Diagnóstico da Função Financeira</span>
+<span class="module-duration">~90 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span><a href="../lessons/finance-01-01.html">O modelo de maturidade da função financeira</a></div>
+<div class="module-lesson"><span class="lesson-dot"></span><span class="link-soon" title="Em breve">Identificar desperdício nos processos financeiros</span></div>
+<div class="module-lesson"><span class="lesson-dot"></span><span class="link-soon" title="Em breve">Mapeamento e expectativas dos stakeholders</span></div>
+<div class="module-lesson"><span class="lesson-dot"></span>Frameworks de diagnóstico: o check-up da função financeira [PDF incluído]</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">02</span>
+<span class="module-title-text">Contabilidade de Gestão e Controlo de Custos</span>
+<span class="module-duration">~100 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Análise da estrutura de custos e métodos de imputação</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Análise de desvios na prática</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Mecanismos de controlo orçamental</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Construir o pacote de contas de gestão</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">03</span>
+<span class="module-title-text">Frameworks de KPIs e Desenho de Dashboards</span>
+<span class="module-duration">~110 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Escolher os KPIs certos para cada público</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Princípios de desenho de dashboards para executivos</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Fundamentos de Power BI para finanças</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Construir um relatório mensal de gestão</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">04</span>
+<span class="module-title-text">IFRS e SOX: Aplicação Prática</span>
+<span class="module-duration">~90 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Principais normas IFRS para profissionais de finanças</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Controlos SOX: o que significam na operação</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Prontidão para auditoria e documentação</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Falhas de compliance comuns e como as evitar</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">05</span>
+<span class="module-title-text">Redesenho da Orçamentação e Previsão</span>
+<span class="module-duration">~95 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Para além do orçamento anual: previsões rolantes</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Modelos de previsão baseados em drivers</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Planeamento de cenários para a liderança</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Acelerar o ciclo orçamental</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">06</span>
+<span class="module-title-text">Automação de Processos Financeiros</span>
+<span class="module-duration">~100 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Identificar oportunidades de automação em finanças</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Padrões de automação R2R, P2P e OTC</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Ferramentas: Power Automate, RPA, Python para finanças</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Construir o business case da automação</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">07</span>
+<span class="module-title-text">SAP para Transformação Financeira</span>
+<span class="module-duration">~85 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Visão geral de finanças no SAP S/4HANA</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Tirar partido do reporte SAP para decisões de gestão</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Padrões de integração SAP + Power BI</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Desafios comuns de finanças em SAP e soluções</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">08</span>
+<span class="module-title-text">Construir o Roadmap de Transformação</span>
+<span class="module-duration">~80 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Priorizar iniciativas: matriz esforço vs. impacto</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Alinhamento de stakeholders e gestão da mudança</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Medir o sucesso da transformação</div>
+<div class="module-lesson"><span class="lesson-dot"></span>A carta de transformação financeira [modelo incluído]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-teal" style="margin-top:40px;">
+<div class="callout-label">Aplicação no mundo real</div>
+<p>Cada módulo inclui pelo menos uma referência a um caso real de projetos de transformação — incluindo Stellantis, Meridian, Fundação Renova e ALE Combustíveis. A teoria assenta sempre no que realmente aconteceu.</p>
+</div>
+</div>
+<!-- Sticky sidebar card -->
+<div>
+<div class="course-sticky-card">
+<div class="sticky-card-header">
+<div class="sticky-card-icon">📊</div>
+<div class="sticky-card-title">Finance Transformation</div>
+</div>
+<div class="sticky-card-body">
+<div class="sticky-meta">
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Duração</span>
+<span class="sticky-meta-value">~12 horas</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Módulos</span>
+<span class="sticky-meta-value">8 módulos · 32 aulas</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Nível</span>
+<span class="sticky-meta-value">Intermédio → Avançado</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Formato</span>
+<span class="sticky-meta-value">Vídeo · Texto · PDF</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Língua</span>
+<span class="sticky-meta-value">Inglês · Português</span>
+</div>
+</div>
+<a class="btn btn-primary sticky-cta" href="../pages/contact.html">Inscrever ou saber mais →</a>
+<p style="font-size:0.78rem; color:var(--text-3); text-align:center; margin-top:12px; line-height:1.5;">Disponível para formandos individuais e licenças para equipas. Contacte para saber preços.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta-strip">
+<div class="container">
+<div class="cta-strip-inner">
+<div class="cta-strip-text">
+<h2>Pronto para transformar a sua função financeira?</h2>
+<p>Fale connosco sobre inscrição, licenças para equipas ou formação à medida.</p>
+</div>
+<div class="cta-strip-actions">
+<a class="btn btn-white" href="../pages/contact.html">Contactar</a>
+<a class="btn btn-ghost-white" href="../pages/courses.html">Ver outros programas</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">MBS Academy</div>
+<p>Formação executiva em Finance Transformation, Excelência de Processos, SAP e Automação Inteligente.</p>
+<div class="footer-social">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">in</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">▶</a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<h2>Plataforma</h2>
+<a href="../pages/about.html">Sobre</a>
+<a href="../pages/courses.html">Formação</a>
+<a href="../pages/case-studies.html">Casos de Estudo</a>
+<a href="../pages/contact.html">Contacto</a>
+</div>
+<div class="footer-col">
+<h2>Formação</h2>
+<a href="finance-transformation.html">Finance Transformation</a>
+<a href="lean-six-sigma.html">Lean Six Sigma</a>
+<a href="intelligent-automation.html">Automação Inteligente</a>
+<a href="sap-finance.html">SAP Finance Ops</a>
+</div>
+<div class="footer-col">
+<h2>Contactos</h2>
+<a href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">YouTube</a>
+<a href="../pages/contact.html">Pedido de formação</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Marlon B Siqueira · MBS Academy. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+<script defer="" src="../../javascript/main.js"></script>
+<script>
+    // Module accordion
+    document.querySelectorAll('.module-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.closest('.module-item-block');
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

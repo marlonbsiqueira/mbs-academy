@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<script>document.documentElement.classList.add("js")</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Programa de Automação Inteligente — RPA, Power Automate, VBA, Python e fluxos potenciados por IA para profissionais de finanças e operações." name="description"/>
+<title>Automação Inteligente | MBS Academy</title>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/intelligent-automation.html" rel="canonical"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/courses/intelligent-automation.html" hreflang="en" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/intelligent-automation.html" hreflang="pt" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/courses/intelligent-automation.html" hreflang="x-default" rel="alternate"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0B1629" name="theme-color"/>
+<meta content="Automação Inteligente | MBS Academy" property="og:title"/>
+<meta content="Programa de Automação Inteligente — RPA, Power Automate, VBA, Python e fluxos potenciados por IA para profissionais de finanças e operações." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/intelligent-automation.html" property="og:url"/>
+<meta content="MBS Academy" property="og:site_name"/>
+<meta content="pt_PT" property="og:locale"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Plus+Jakarta+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/main.css" rel="stylesheet"/>
+<style>
+    .course-detail-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; padding: 64px 0; }
+    .course-sticky-card { position: sticky; top: 96px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+    .sticky-card-header { background: linear-gradient(135deg, var(--navy), var(--navy-700)); padding: 28px; text-align: center; }
+    .sticky-card-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .sticky-card-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; font-style: italic; color: #fff; }
+    .sticky-card-body { padding: 24px; }
+    .sticky-meta { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .sticky-meta-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .sticky-meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .sticky-meta-label { font-size: 0.8rem; color: var(--text-3); }
+    .sticky-meta-value { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+
+    .objectives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .objective-item { display: flex; align-items: flex-start; gap: 10px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px; }
+    .objective-check { color: var(--teal-ink); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+    .objective-item p { font-size: 0.87rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+
+    .module-accordion { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+    .module-item-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+    .module-header { display: flex; align-items: center; gap: 16px; padding: 18px 20px; cursor: pointer; user-select: none; }
+    .module-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--teal-ink); width: 28px; flex-shrink: 0; }
+    .module-title-text { font-weight: 600; font-size: 0.95rem; color: var(--text); flex: 1; }
+    .module-duration { font-size: 0.8rem; color: var(--text-3); flex-shrink: 0; }
+    .module-body { padding: 0 20px 18px 64px; display: none; }
+    .module-item-block.open .module-body { display: block; }
+    .module-lessons { display: flex; flex-direction: column; gap: 6px; }
+    .module-lesson { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--text-2); padding: 6px 0; }
+    .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-md); flex-shrink: 0; }
+
+    .audience-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .audience-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--bg-alt); border-radius: var(--r-sm); font-size: 0.9rem; color: var(--text-2); }
+    .audience-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    .tool-strip { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+    .tool-tag { display: flex; align-items: center; gap: 7px; padding: 7px 14px; border-radius: var(--r-sm); background: var(--bg-alt); border: 1px solid var(--border); font-size: 0.82rem; font-weight: 600; color: var(--text-2); }
+
+    @media (max-width: 960px) { .course-detail-layout { grid-template-columns: 1fr; } .course-sticky-card { position: static; } .objectives-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<header class="site-header" id="site-header">
+<nav class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="brand-initials">MBS</span>
+<span class="brand-name">Academy</span>
+</a>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="../index.html">Início</a></li>
+<li><a class="nav-link" href="../pages/about.html">Sobre</a></li>
+<li><a class="nav-link active" href="../pages/courses.html">Formação</a></li>
+<li><a class="nav-link" href="../pages/case-studies.html">Casos de Estudo</a></li>
+<li><a class="nav-link" href="../pages/contact.html">Contacto</a></li>
+</ul>
+<div aria-label="Língua" class="lang-switch" role="group"><a data-lang-link="en" href="../../courses/intelligent-automation.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang-link="pt" href="intelligent-automation.html" hreflang="pt" lang="pt">PT</a></div>
+<a class="btn btn-primary nav-cta" href="../pages/contact.html">Falar connosco</a>
+<button aria-label="Abrir/fechar navegação" class="mobile-toggle" id="mobile-toggle">
+<span></span><span></span><span></span>
+</button>
+</nav>
+</header>
+<main>
+<section class="page-hero">
+<div class="container">
+<div class="page-hero-inner">
+<span class="eyebrow">Automação · RPA · Power Platform · IA</span>
+<h1>Automação Inteligente</h1>
+<p>Pare de automatizar as coisas erradas. Este programa ensina a identificar, desenhar, construir e governar automação que realmente gera resultados — por quem implementou mais de 20 soluções, com mais de €200K em poupanças e ~9 FTE em eficiência, num dos maiores ambientes SSC/GBS da Europa.</p>
+<div class="hero-actions">
+<a class="btn btn-white btn-lg" href="../pages/contact.html">Inscrever ou saber mais</a>
+<a class="btn btn-ghost-white btn-lg" href="#modules">Ver módulos</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="course-detail-layout">
+<!-- Main content -->
+<div>
+<div class="section-label">Visão geral do programa</div>
+<h2 class="section-title">O que este programa cobre.</h2>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:20px;">A maioria dos programas de automação ensina a usar uma ferramenta. Este ensina a pensar a automação — que processos escolher, como desenhar soluções que escalam, como governar o que implementa e como construir o business case que garante o financiamento.</p>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:32px;">Cada módulo assenta em experiência real de entrega: o programa transfronteiriço de 200.000 comunicações na Stellantis, a automação R2R que encurtou o fecho mensal de 8 para 6 dias, os fluxos em Power Platform que eliminaram 3 dias de reporte manual semanal. As ferramentas são reais. Os resultados estão documentados.</p>
+<div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:12px;">Ferramentas e plataformas abordadas</div>
+<div class="tool-strip">
+<div class="tool-tag">🤖 RPA (Blue Prism · Automation Anywhere)</div>
+<div class="tool-tag">⚡ Power Automate</div>
+<div class="tool-tag">📊 Power Apps</div>
+<div class="tool-tag">📋 VBA (Excel · Access)</div>
+<div class="tool-tag">🐍 Python (pandas · openpyxl)</div>
+<div class="tool-tag">🧠 Microsoft Copilot</div>
+<div class="tool-tag">🔷 Integração com SAP</div>
+</div>
+<h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">Para quem é</h3>
+<div class="audience-list">
+<div class="audience-item"><span class="audience-icon">📊</span> Finance managers que querem eliminar trabalho manual na sua equipa</div>
+<div class="audience-item"><span class="audience-icon">🔄</span> Responsáveis de transformação com automação no âmbito do programa</div>
+<div class="audience-item"><span class="audience-icon">⚙️</span> Profissionais de operações que querem criar capacidade de automação sem serem programadores</div>
+<div class="audience-item"><span class="audience-icon">💼</span> Analistas de negócio que precisam de avaliar, desenhar e implementar soluções de automação</div>
+<div class="audience-item"><span class="audience-icon">🏢</span> CFOs e diretores financeiros a construir uma estratégia de automação para a sua função</div>
+</div>
+<h3 id="objectives" style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">O que vai conseguir fazer</h3>
+<div class="objectives-grid">
+<div class="objective-item"><span class="objective-check">✓</span><p>Identificar que processos são verdadeiros candidatos à automação e quais vão fazer perder tempo</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Construir um business case de automação sólido, que as finanças e a liderança aprovem</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Desenhar soluções de automação estáveis, auditáveis e fáceis de manter</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Escolher a ferramenta certa (RPA, Power Automate, VBA, Python) para cada caso</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Construir automação funcional com Power Automate e VBA sem experiência prévia de programação</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Governar o portefólio de automação para que as soluções se mantenham atualizadas, auditadas e em conformidade</p></div>
+</div>
+<h3 id="modules" style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">Módulos do programa</h3>
+<div class="module-accordion">
+<div class="module-item-block open">
+<div class="module-header">
+<span class="module-num">01</span>
+<span class="module-title-text">A Oportunidade de Automação — Como Pensar Antes de Construir</span>
+<span class="module-duration">~90 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Porque falha a maioria dos programas de automação (e o que têm em comum)</div>
+<div class="module-lesson"><span class="lesson-dot"></span>A matriz de prontidão para automação: processos baseados em regras, em julgamento e assistidos por IA</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Critérios de seleção de processos: volume, estabilidade, frequência, taxa de exceções</div>
+<div class="module-lesson"><span class="lesson-dot"></span>O mapa de oportunidades de automação — um framework para priorizar o pipeline</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">02</span>
+<span class="module-title-text">Construir o Business Case da Automação</span>
+<span class="module-duration">~80 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Calcular o custo real dos processos manuais (para além do tempo em FTE)</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Modelação de ROI da automação: poupanças, redução de risco, ganhos de rapidez</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Apresentar propostas de automação às finanças e à liderança de topo</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Modelo de business case (formato real usado na Stellantis incluído)</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">03</span>
+<span class="module-title-text">Fundamentos de RPA — Conceitos, Ferramentas e Seleção</span>
+<span class="module-duration">~95 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Como funciona o RPA: bots, orquestradores, attended vs. unattended</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Panorama de ferramentas: Blue Prism, Automation Anywhere, UiPath — como escolher</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Casos de RPA em finanças: processamento de contas a pagar, reconciliações, reporte de fecho</div>
+<div class="module-lesson"><span class="lesson-dot"></span>O que faz um projeto de RPA ter sucesso ou falhar — lições de implementações reais</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">04</span>
+<span class="module-title-text">Power Automate para Fluxos Financeiros</span>
+<span class="module-duration">~110 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Fundamentos de Power Automate: fluxos, triggers, condições, ações</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Construir fluxos de aprovação para notas de encomenda, acréscimos e lançamentos</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Distribuição automatizada de reporte financeiro (o caso Stellantis: mais de 70 líderes, zero intervenção manual)</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Ligação a dados de SharePoint, Teams, Outlook e SAP</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Tratamento de erros, registos e documentação de compliance</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">05</span>
+<span class="module-title-text">Domínio de VBA para Operações Financeiras</span>
+<span class="module-duration">~120 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Fundamentos de VBA: módulos, sub-rotinas, variáveis, ciclos, condições</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Automatizar o Excel: manipulação de dados, formatação, geração de relatórios</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Trabalhar com vários livros e fontes de dados externas</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Construir relatórios de gestão e dashboards automatizados em Excel</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Casos reais de VBA nas operações financeiras da Stellantis</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">06</span>
+<span class="module-title-text">Python para Automação Financeira</span>
+<span class="module-duration">~105 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Fundamentos de Python para não programadores: sintaxe, tipos de dados, lógica básica</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Pandas para dados financeiros: ler, limpar, transformar e exportar</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Automatizar o Excel com openpyxl: gerar relatórios a partir de dados em bruto</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Ligar Python às exportações de dados do SAP</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Quando usar Python, VBA ou Power Automate</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">07</span>
+<span class="module-title-text">Automação Potenciada por IA — Microsoft Copilot e Mais</span>
+<span class="module-duration">~85 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>O que a IA realmente muda na automação (e o que não muda)</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Microsoft Copilot em toda a stack financeira: Excel, Teams, Outlook, Power BI</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Processamento de documentos com IA: faturas, contratos, documentação de aprovação</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Aplicações práticas implementadas na Stellantis: automação de documentação, analytics potenciado</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">08</span>
+<span class="module-title-text">Desenhar para Escalar — Arquitetura, Governação e Manutenção</span>
+<span class="module-duration">~90 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Construir um portefólio de automação que não se torne dívida técnica</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Padrões de documentação para automação pronta para auditoria (requisitos SOX e RGPD)</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Gestão da mudança e tratamento de exceções em produção</div>
+<div class="module-lesson"><span class="lesson-dot"></span>O framework de governação que uso na Stellantis para gerir mais de 20 soluções em produção</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">09</span>
+<span class="module-title-text">Construir o Seu Roadmap de Automação</span>
+<span class="module-duration">~75 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Sequenciar o pipeline de automação: primeiro os ganhos rápidos, depois as construções estratégicas</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Alinhamento de stakeholders: TI, Finanças, Compliance e Operações</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Medir o impacto da automação: KPIs para além das poupanças em FTE</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Modelo de roadmap de automação (usado no planeamento do programa da Stellantis)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-teal" style="margin-top:40px;">
+<div class="callout-label">Construído a partir do programa de automação da Stellantis</div>
+<p>Este programa baseia-se diretamente em mais de 20 soluções implementadas no SSC europeu da Stellantis, incluindo um programa transfronteiriço de 200.000 comunicações, a automação R2R que reduziu o fecho mensal de 8 para 6 dias e a integração Power BI + Power Automate que eliminou 3 dias de reporte manual semanal para mais de 70 líderes seniores. Cada módulo refere decisões de arquitetura e resultados reais.</p>
+</div>
+</div>
+<!-- Sticky sidebar -->
+<div>
+<div class="course-sticky-card">
+<div class="sticky-card-header">
+<div class="sticky-card-icon">🤖</div>
+<div class="sticky-card-title">Automação Inteligente</div>
+</div>
+<div class="sticky-card-body">
+<div class="sticky-meta">
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Nível</span>
+<span class="sticky-meta-value">Intermédio → Especialista</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Duração</span>
+<span class="sticky-meta-value">~14 horas</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Módulos</span>
+<span class="sticky-meta-value">9 módulos</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Entrega</span>
+<span class="sticky-meta-value">Online · Presencial disponível</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Pré-requisitos</span>
+<span class="sticky-meta-value">Experiência em finanças ou operações</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Certificado</span>
+<span class="sticky-meta-value">Na conclusão</span>
+</div>
+</div>
+<a class="btn btn-primary sticky-cta btn-lg" href="../pages/contact.html">Inscrever ou saber mais</a>
+<p style="font-size:0.78rem; color:var(--text-3); text-align:center; margin-top:12px;">Formação para equipas disponível — contacte para saber preços</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta-strip">
+<div class="container">
+<div class="cta-strip-inner">
+<div class="cta-strip-text">
+<h2>Pronto para construir automação que realmente gera resultados?</h2>
+<p>Inscreva-se no programa ou fale connosco sobre formação à medida da sua equipa.</p>
+</div>
+<div class="cta-strip-actions">
+<a class="btn btn-white btn-lg" href="../pages/contact.html">Falar connosco</a>
+<a class="btn btn-ghost-white btn-lg" href="../pages/courses.html">Ver todos os programas</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">MBS Academy</div>
+<p>Formação executiva em Finance Transformation, Excelência de Processos, SAP e Automação Inteligente.</p>
+<div class="footer-social">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">in</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">▶</a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<h2>Plataforma</h2>
+<a href="../pages/about.html">Sobre</a>
+<a href="../pages/courses.html">Formação</a>
+<a href="../pages/case-studies.html">Casos de Estudo</a>
+<a href="../pages/contact.html">Contacto</a>
+</div>
+<div class="footer-col">
+<h2>Formação</h2>
+<a href="finance-transformation.html">Finance Transformation</a>
+<a href="lean-six-sigma.html">Lean Six Sigma</a>
+<a href="intelligent-automation.html">Automação Inteligente</a>
+<a href="sap-finance.html">SAP Finance Ops</a>
+</div>
+<div class="footer-col">
+<h2>Contactos</h2>
+<a href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">YouTube</a>
+<a href="../pages/contact.html">Pedido de formação</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom"><p>© 2026 Marlon B Siqueira · MBS Academy. Todos os direitos reservados.</p></div>
+</div>
+</footer>
+<script defer="" src="../../javascript/main.js"></script>
+</body>
+</html>

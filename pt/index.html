@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<script>document.documentElement.classList.add("js")</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="MBS Academy — formação executiva em Finance Transformation, Lean Six Sigma, Automação Inteligente, SAP Finance, Kaizen, Controlo Orçamental e mais. Construída a partir de mais de 12 anos de trabalho real de transformação." name="description"/>
+<meta content="Marlon B Siqueira" name="author"/>
+<meta content="MBS Academy | Formação Executiva em Finanças, Lean e Automação" property="og:title"/>
+<meta content="Programas práticos construídos a partir de experiência real de transformação — não de teoria de sala de aula." property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>MBS Academy | Finanças · Lean · Automação · SAP · Kaizen</title>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/" rel="canonical"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/" hreflang="en" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/" hreflang="pt" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/" hreflang="x-default" rel="alternate"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0B1629" name="theme-color"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/pt/" property="og:url"/>
+<meta content="MBS Academy" property="og:site_name"/>
+<meta content="pt_PT" property="og:locale"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://images.unsplash.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Plus+Jakarta+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href=".././styles/main.css" rel="stylesheet"/>
+<style>
+
+    /* ── HERO ──────────────────────────────────────── */
+    .home-hero {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 88px;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 700px 600px at 72% 50%, rgba(27,59,255,0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 400px at 18% 80%, rgba(0,184,169,0.07) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .home-hero-inner { position: relative; z-index: 1; max-width: 780px; }
+    .home-hero .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-ink); margin-bottom: 22px; }
+    .home-hero .eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--teal); border-radius: 999px; }
+    .home-hero h1 { font-family: var(--font-display); font-size: clamp(2.6rem, 4.5vw, 4.2rem); font-weight: 600; font-style: italic; letter-spacing: -0.03em; line-height: 1.06; color: #fff; margin-bottom: 24px; }
+    .home-hero h1 em { color: var(--teal-ink); }
+    .home-hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.62); max-width: 540px; line-height: 1.82; margin-bottom: 38px; }
+    .home-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ── STATS BAR ─────────────────────────────────── */
+    .stats-bar { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .stats-bar-inner { display: grid; grid-template-columns: repeat(6, 1fr); }
+    .stat-cell { padding: 22px 16px; text-align: center; border-right: 1px solid var(--border); transition: background 0.2s; }
+    .stat-cell:last-child { border-right: none; }
+    .stat-cell:hover { background: var(--bg-alt); }
+    .stat-val { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; font-style: italic; color: var(--blue); line-height: 1; margin-bottom: 4px; }
+    .stat-val.t { color: var(--teal-ink); }
+    .stat-desc { font-size: 0.72rem; color: var(--text-3); font-weight: 500; line-height: 1.4; }
+
+    /* ── COURSE CARDS WITH IMAGE COVERS ────────────── */
+    /*
+     * HOW TO ADD COURSE PHOTOS/VIDEOS:
+     * 1. Create an /images/courses/ folder in your repo
+     * 2. Add your thumbnail image (recommended: 640×360px JPG/WebP)
+     * 3. In the course card, uncomment the <img> tag and set the src
+     * 4. For video: add a YouTube embed in the lesson page video-embed section
+     */
+    .course-cover {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--r-lg) var(--r-lg) 0 0;
+    }
+    .course-cover img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transition: transform 0.42s ease;
+    }
+    .course-card:hover .course-cover img { transform: scale(1.05); }
+    .course-cover-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .course-cover-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(transparent 40%, rgba(0,0,0,0.55) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 14px 18px;
+    }
+    .cover-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    /* Gradient themes — used when no photo is set */
+    .cg-finance    { background: linear-gradient(135deg, #080F1E 0%, #1B3BFF 100%); }
+    .cg-lean       { background: linear-gradient(135deg, #064E3B 0%, #059669 100%); }
+    .cg-auto       { background: linear-gradient(135deg, #1e1b4b 0%, #7C3AED 100%); }
+    .cg-sap        { background: linear-gradient(135deg, #1c1917 0%, #D97706 100%); }
+    .cg-kaizen     { background: linear-gradient(135deg, #0c2a4a 0%, #0284C7 100%); }
+    .cg-5s         { background: linear-gradient(135deg, #14532d 0%, #16A34A 100%); }
+    .cg-budget     { background: linear-gradient(135deg, #1e3a5f 0%, #2563EB 100%); }
+    .cg-tax        { background: linear-gradient(135deg, #1a0a2e 0%, #7C3AED 100%); }
+    .cg-career     { background: linear-gradient(135deg, #3f1012 0%, #DC2626 100%); }
+    .cg-pressure   { background: linear-gradient(135deg, #1c1a18 0%, #78716C 100%); }
+    .cg-leanth     { background: linear-gradient(135deg, #022c1c 0%, #10B981 100%); }
+
+    /* Decorative pattern overlay on covers */
+    .cg-finance::after, .cg-lean::after, .cg-auto::after, .cg-sap::after,
+    .cg-kaizen::after, .cg-5s::after, .cg-budget::after, .cg-tax::after,
+    .cg-career::after, .cg-pressure::after, .cg-leanth::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Override card header — remove old color blocks */
+    .course-card { border-radius: var(--r-lg); }
+    .course-card-body { padding: 20px 22px 14px; flex: 1; }
+    .course-card-footer { padding: 12px 22px 20px; border-top: 1px solid var(--border); }
+
+    /* ── DIFFERENTIATORS ───────────────────────────── */
+    .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .diff-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 28px; transition: transform 0.22s, box-shadow 0.22s; }
+    .diff-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .diff-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; font-style: italic; color: var(--teal-ink); line-height: 1; margin-bottom: 14px; }
+    .diff-card h3 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; font-style: italic; color: var(--text); margin-bottom: 10px; letter-spacing: -0.01em; }
+    .diff-card p { font-size: 0.88rem; color: var(--text-2); line-height: 1.75; margin: 0; }
+
+    /* ── INSTRUCTOR STRIP ──────────────────────────── */
+    .instructor-strip { background: var(--navy); padding: 80px 0; }
+    .instructor-inner { display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: center; }
+    .instructor-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-xl); padding: 36px; text-align: center; }
+    /*
+     * INSTRUCTOR PHOTO: Replace the avatar div below with:
+     * an <img> pointing to images/instructor.jpg (alt "Marlon B Siqueira"),
+     * 110×110 px, border-radius 50%, object-fit cover — see the HTML comment
+     * in the instructor section for the ready-made tag.
+     */
+    .instructor-avatar { width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), #4D6FFF); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; font-style: italic; color: #fff; margin: 0 auto 20px; }
+    .instructor-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; font-style: italic; color: #fff; margin-bottom: 4px; }
+    .instructor-role { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .instr-badges { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; }
+    .instr-badge { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; background: rgba(27,59,255,0.2); border: 1px solid rgba(27,59,255,0.3); color: rgba(255,255,255,0.75); }
+    .instr-badge.t { background: rgba(0,184,169,0.15); border-color: rgba(0,184,169,0.3); }
+    .instructor-text h2 { font-family: var(--font-display); font-size: clamp(1.7rem, 2.4vw, 2.4rem); font-weight: 600; font-style: italic; color: #fff; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; }
+    .instructor-text h2 em { color: var(--teal-ink); }
+    .instructor-text p { font-size: 0.97rem; color: rgba(255,255,255,0.62); line-height: 1.88; margin-bottom: 14px; max-width: 560px; }
+    .instr-metrics { display: flex; gap: 32px; flex-wrap: wrap; margin: 24px 0 32px; }
+    .instr-mv { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; font-style: italic; color: var(--teal-ink); line-height: 1; margin-bottom: 3px; }
+    .instr-ml { font-size: 0.74rem; color: rgba(255,255,255,0.6); font-weight: 500; }
+
+    /* ── REVEAL ─────────────────────────────────────── */
+    .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .js .reveal.left  { transform: translateX(-24px); }
+    .js .reveal.right { transform: translateX(24px); }
+    .js .reveal.show  { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .stats-bar-inner { grid-template-columns: repeat(3, 1fr); }
+      .stat-cell:nth-child(3) { border-right: none; }
+      .stat-cell:nth-child(4),
+      .stat-cell:nth-child(5),
+      .stat-cell:nth-child(6) { border-top: 1px solid var(--border); }
+    }
+    @media (max-width: 900px) {
+      .diff-grid { grid-template-columns: 1fr 1fr; }
+      .instructor-inner { grid-template-columns: 1fr; gap: 40px; }
+      .instructor-card { max-width: 300px; margin: 0 auto; }
+      .instr-metrics { justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .diff-grid { grid-template-columns: 1fr; }
+      .stat-cell:nth-child(even) { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" id="site-header">
+<nav class="nav-inner">
+<a class="nav-brand" href="index.html">
+<span class="brand-initials">MBS</span>
+<span class="brand-name">Academy</span>
+</a>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link active" href="index.html">Início</a></li>
+<li><a class="nav-link" href="pages/about.html">Sobre</a></li>
+<li><a class="nav-link" href="pages/courses.html">Formação</a></li>
+<li><a class="nav-link" href="pages/case-studies.html">Casos de Estudo</a></li>
+<li><a class="nav-link" href="pages/contact.html">Contacto</a></li>
+</ul>
+<div aria-label="Língua" class="lang-switch" role="group"><a data-lang-link="en" href="../index.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang-link="pt" href="index.html" hreflang="pt" lang="pt">PT</a></div>
+<a class="btn btn-primary nav-cta" href="pages/courses.html">Ver formações</a>
+<button aria-label="Abrir/fechar navegação" class="mobile-toggle" id="mobile-toggle">
+<span></span><span></span><span></span>
+</button>
+</nav>
+</header>
+<main>
+<!-- ═══ HERO ═══ -->
+<section class="home-hero">
+<div class="container">
+<div class="home-hero-inner">
+<span class="eyebrow">MBS Academy · Formação Executiva</span>
+<h1>Formação nascida da<br/><em>transformação real</em><br/>em escala.</h1>
+<p class="home-hero-sub">11 programas. Todos construídos a partir de mais de 12 anos de experiência prática em transformação financeira multinacional, excelência de processos, Lean Six Sigma e automação inteligente. Nada de teoria de sala de aula. Nada de frameworks reciclados. Conhecimento prático que pode aplicar já na segunda-feira.</p>
+<div class="home-hero-actions">
+<a class="btn btn-primary btn-lg" href="pages/courses.html">Ver todos os programas</a>
+<a class="btn btn-ghost-white btn-lg" href="pages/about.html">Conhecer o formador</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══ STATS BAR ═══ -->
+<div class="stats-bar">
+<div class="container">
+<div class="stats-bar-inner">
+<div class="stat-cell">
+<div class="stat-val">12+</div>
+<div class="stat-desc">Anos de experiência internacional</div>
+</div>
+<div class="stat-cell">
+<div class="stat-val">€200K+</div>
+<div class="stat-desc">Poupanças de produtividade alcançadas</div>
+</div>
+<div class="stat-cell">
+<div class="stat-val t">20+</div>
+<div class="stat-desc">Soluções de automação implementadas</div>
+</div>
+<div class="stat-cell">
+<div class="stat-val">~9 FTE</div>
+<div class="stat-desc">Contributo em eficiência</div>
+</div>
+<div class="stat-cell">
+<div class="stat-val t">30+</div>
+<div class="stat-desc">Estrangulamentos de processo eliminados</div>
+</div>
+<div class="stat-cell">
+<div class="stat-val">11</div>
+<div class="stat-desc">Programas de formação disponíveis</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ═══ FEATURED PROGRAMS ═══ -->
+<section class="section">
+<div class="container">
+<div class="section-label">Programas em destaque</div>
+<h2 class="section-title">Escolha a sua <em>área de foco.</em></h2>
+<p class="section-subtitle">Cada programa nasce de uma área central de competência e assenta em resultados, não em slides. Os 11 programas estão abaixo.</p>
+<div class="courses-grid">
+<!-- Finance Transformation -->
+<a class="course-card reveal left" href="courses/finance-transformation.html">
+<div class="course-cover">
+<img alt="Finance Transformation" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-finance"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Finanças</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Finance Transformation</h3>
+<p>Redesenhe a função financeira, de fábrica de relatórios a motor de decisão estratégica — KPIs, IFRS, SOX, Power BI, SAP.</p>
+<div class="course-meta"><span>8 módulos</span><span>·</span><span>~12 horas</span><span>·</span><span>Intermédio → Avançado</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</a>
+<!-- Lean Six Sigma -->
+<a class="course-card reveal" href="courses/lean-six-sigma.html">
+<div class="course-cover">
+<img alt="Lean Six Sigma" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-lean"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Excelência de Processos</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Lean Six Sigma</h3>
+<p>Dos fundamentos de 5S e Kaizen a projetos DMAIC completos em ambientes financeiros e industriais.</p>
+<div class="course-meta"><span>10 módulos</span><span>·</span><span>~16 horas</span><span>·</span><span>Fundamentos → Avançado</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</a>
+<!-- Intelligent Automation -->
+<a class="course-card reveal" href="courses/intelligent-automation.html">
+<div class="course-cover">
+<img alt="Automação Inteligente" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-auto"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Automação</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Automação Inteligente</h3>
+<p>RPA, Power Automate, VBA, Python e fluxos potenciados por IA — escolher, desenhar e implementar automação que gera resultados.</p>
+<div class="course-meta"><span>9 módulos</span><span>·</span><span>~14 horas</span><span>·</span><span>Intermédio → Especialista</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</a>
+<!-- SAP Finance -->
+<a class="course-card reveal right" href="courses/sap-finance.html">
+<div class="course-cover">
+<img alt="SAP Finance" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-sap"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">SAP</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>SAP Finance Operations</h3>
+<p>S/4HANA para profissionais — R2R, P2P, OTC, reporte financeiro e integração com Power BI, por quem liderou UAT em mais de 15 entidades.</p>
+<div class="course-meta"><span>7 módulos</span><span>·</span><span>~10 horas</span><span>·</span><span>Intermédio</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</a>
+<!-- Kaizen -->
+<div aria-disabled="true" class="course-card reveal left is-soon"><span class="soon-badge">Em breve</span>
+<div class="course-cover">
+<img alt="Kaizen" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-kaizen"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Excelência de Processos</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Kaizen: Eventos, Facilitação e Resultados</h3>
+<p>Planear, facilitar e sustentar eventos Kaizen que geram resultados reais e mensuráveis — em finanças, operações e back-office.</p>
+<div class="course-meta"><span>6 módulos</span><span>·</span><span>~8 horas</span><span>·</span><span>Fundamentos → Intermédio</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</div>
+<!-- Budget Control -->
+<div aria-disabled="true" class="course-card reveal is-soon"><span class="soon-badge">Em breve</span>
+<div class="course-cover">
+<img alt="Controlo Orçamental" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-budget"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Finanças</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Controlo Orçamental e Planeamento Financeiro</h3>
+<p>Construir, controlar e comunicar orçamentos que as finanças e a liderança realmente usam — incluindo análise de desvios, previsões e modelos rolantes.</p>
+<div class="course-meta"><span>7 módulos</span><span>·</span><span>~9 horas</span><span>·</span><span>Fundamentos → Avançado</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</div>
+<!-- Interview Prep -->
+<div aria-disabled="true" class="course-card reveal is-soon"><span class="soon-badge">Em breve</span>
+<div class="course-cover">
+<img alt="Preparação para Entrevistas" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-career"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Desenvolvimento de Carreira</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Preparação para Entrevistas e Posicionamento de Carreira</h3>
+<p>Posicione-se no top 1% dos candidatos de finanças e operações — do storytelling e das métricas à prática ao vivo com perguntas reais.</p>
+<div class="course-meta"><span>6 módulos</span><span>·</span><span>~7 horas</span><span>·</span><span>Todos os níveis</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</div>
+<!-- Under Pressure -->
+<div aria-disabled="true" class="course-card reveal right is-soon"><span class="soon-badge">Em breve</span>
+<div class="course-cover">
+<img alt="Trabalhar sob Pressão" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1573496799515-9fd8db875b67?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-pressure"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Performance</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Alta Performance sob Pressão</h3>
+<p>Entregar resultados quando os prazos são impossíveis, o que está em jogo é muito e os recursos são escassos — as competências raramente ensinadas nos programas de finanças.</p>
+<div class="course-meta"><span>5 módulos</span><span>·</span><span>~6 horas</span><span>·</span><span>Intermédio → Sénior</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</div>
+<!-- 5S Methodology -->
+<a class="course-card reveal left" href="courses/5s-methodology.html">
+<div class="course-cover">
+<img alt="Metodologia 5S" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-5s"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Excelência de Processos</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Organização do Posto de Trabalho 5S</h3>
+<p>Implementar e sustentar o 5S (Separar, Arrumar, Limpar, Normalizar, Sustentar) em finanças e back-office — eliminando o desperdício na origem antes que se acumule.</p>
+<div class="course-meta"><span>5 módulos</span><span>·</span><span>~6 horas</span><span>·</span><span>Fundamentos → Intermédio</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</a>
+<!-- Tax & Tax Compliance -->
+<a class="course-card reveal" href="courses/fiscalidade.html">
+<div class="course-cover">
+<img alt="Fiscalidade e Compliance Fiscal" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-tax"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Finanças</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Fiscalidade &amp; Compliance Fiscal</h3>
+<p>O enquadramento fiscal essencial para profissionais de finanças — IVA, IRC, obrigações declarativas e gestão de risco fiscal em ambientes multinacionais.</p>
+<div class="course-meta"><span>6 módulos</span><span>·</span><span>~8 horas</span><span>·</span><span>Fundamentos → Intermédio</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</a>
+<!-- Lean Thinking -->
+<a class="course-card reveal right" href="courses/lean-thinking.html">
+<div class="course-cover">
+<img alt="Lean Thinking" decoding="async" height="360" loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=640&amp;h=360&amp;fit=crop&amp;auto=format" width="640"/>
+<div class="course-cover-bg cg-leanth"></div>
+<div class="course-cover-overlay">
+<span class="cover-tag">Excelência de Processos</span>
+</div>
+</div>
+<div class="course-card-body">
+<h3>Lean Thinking</h3>
+<p>Os princípios e a mentalidade por trás do Lean — valor, fluxo, pull, perfeição — aplicados a finanças, operações e serviços para eliminar de vez o desperdício sistémico.</p>
+<div class="course-meta"><span>6 módulos</span><span>·</span><span>~8 horas</span><span>·</span><span>Fundamentos → Intermédio</span></div>
+</div>
+<div class="course-card-footer"><span class="btn-text-link">Ver programa →</span></div>
+</a>
+</div>
+<div class="section-cta">
+<a class="btn btn-ghost btn-lg" href="pages/contact.html">Contacte-nos para formação à medida →</a>
+</div>
+</div>
+</section>
+<!-- ═══ WHY THIS TRAINING ═══ -->
+<section class="section section-alt">
+<div class="container">
+<div class="section-label">Porquê a MBS Academy</div>
+<h2 class="section-title">Construída de forma diferente.</h2>
+<div class="diff-grid">
+<div class="diff-card reveal left">
+<div class="diff-num">01</div>
+<h3>Prática real e atual</h3>
+<p>O formador lidera atualmente a transformação financeira e a automação num dos ambientes SSC/GBS multinacionais mais complexos da Europa — mais de 15 entidades jurídicas em mais de 8 países. O material reflete o que funciona hoje, não o que funcionou há anos num caso de estudo.</p>
+</div>
+<div class="diff-card reveal">
+<div class="diff-num">02</div>
+<h3>Resultados, não teoria</h3>
+<p>Cada caso referido nestes programas tem um resultado associado: fecho mensal reduzido de 8 para 6 dias, mais de 30 estrangulamentos eliminados, mais de €200K em poupanças de produtividade, mais de 200K comunicações automatizadas sem qualquer perturbação. Os números são reais.</p>
+</div>
+<div class="diff-card reveal right">
+<div class="diff-num">03</div>
+<h3>Aplicação imediata</h3>
+<p>Cada módulo termina com um framework, um modelo ou uma checklist que pode levar para o dia de trabalho seguinte. O objetivo não é a certificação — é a capacidade. Deve conseguir aplicar o que aprendeu na semana seguinte a concluir qualquer módulo.</p>
+</div>
+<div class="diff-card reveal left">
+<div class="diff-num">04</div>
+<h3>Integração de Finanças e Tecnologia</h3>
+<p>A maioria da formação em finanças ignora as ferramentas. A maioria da formação em tecnologia ignora o contexto financeiro. Estes programas integram ambos — porque é nessa integração que estão as oportunidades de maior valor e onde a maioria das organizações falha.</p>
+</div>
+<div class="diff-card reveal">
+<div class="diff-num">05</div>
+<h3>Abrangência sem superficialidade</h3>
+<p>De projetos DMAIC à implementação de SAP S/4HANA e à automação com Excel VBA: os programas cobrem todo o espectro de que um profissional de transformação financeira realmente precisa — não apenas uma disciplina estreita.</p>
+</div>
+<div class="diff-card reveal right">
+<div class="diff-num">06</div>
+<h3>Formação à medida para equipas</h3>
+<p>Qualquer programa pode ser dado como workshop à medida da sua equipa — adaptado às suas ferramentas, aos seus processos e aos seus desafios específicos. O conteúdo é um ponto de partida, não uma limitação.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══ INSTRUCTOR ═══ -->
+<section class="instructor-strip">
+<div class="container">
+<div class="instructor-inner">
+<div class="instructor-card reveal left">
+<div class="instructor-avatar">MB</div>
+<!-- REPLACE with: <img src="./images/instructor.jpg" alt="Marlon B Siqueira" style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 20px;display:block;"> -->
+<div class="instructor-name">Marlon B. Siqueira</div>
+<div class="instructor-role">Finance Transformation Manager · Porto, Portugal</div>
+<div class="instr-badges">
+<span class="instr-badge">Lean Six Sigma GB</span>
+<span class="instr-badge t">SAP S/4HANA</span>
+<span class="instr-badge">Power BI · DAX</span>
+<span class="instr-badge t">RPA · Power Platform</span>
+<span class="instr-badge">IFRS · SOX · GDPR</span>
+</div>
+</div>
+<div class="instructor-text reveal right">
+<div style="font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color: var(--teal-ink);margin-bottom:16px;">O formador</div>
+<h2>Ensino o que faço <em>neste momento.</em></h2>
+<p>Lidero a Transformação Financeira e a Automação Inteligente numa grande multinacional europeia com SSC/GBS — um dos ambientes de serviços partilhados mais complexos da Europa, com mais de 15 entidades jurídicas em mais de 8 países. Sou também Lean Six Sigma Green Belt, com aplicação em ambientes industriais e financeiros globais.</p>
+<p>Os programas que ensino aqui são uma tradução direta do que construí e do que vi funcionar — e falhar — ao longo de mais de 12 anos e em 5 países. Não um resumo do que li. A realidade.</p>
+<div class="instr-metrics">
+<div><div class="instr-mv">12+</div><div class="instr-ml">Anos · 5 países</div></div>
+<div><div class="instr-mv">€200K+</div><div class="instr-ml">Poupanças alcançadas</div></div>
+<div><div class="instr-mv">~9 FTE</div><div class="instr-ml">Contributo em eficiência</div></div>
+<div><div class="instr-mv">200K+</div><div class="instr-ml">Comunicações automatizadas</div></div>
+</div>
+<div style="display:flex;gap:14px;flex-wrap:wrap;">
+<a class="btn btn-white btn-lg" href="pages/about.html">Perfil completo do formador</a>
+<a class="btn btn-ghost-white btn-lg" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══ CTA STRIP ═══ -->
+<section class="cta-strip">
+<div class="container">
+<div class="cta-strip-inner">
+<div class="cta-strip-text">
+<h2>Pronto para desenvolver competências que se aplicam diretamente ao seu trabalho?</h2>
+<p>Explore os 11 programas ou fale connosco para formação à medida da sua equipa.</p>
+</div>
+<div class="cta-strip-actions">
+<a class="btn btn-white btn-lg" href="pages/courses.html">Ver formações</a>
+<a class="btn btn-ghost-white btn-lg" href="pages/contact.html">Falar connosco</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">MBS Academy</div>
+<p>Formação executiva em Finance Transformation, Lean Six Sigma, Automação, SAP, Kaizen, Controlo Orçamental e mais.</p>
+<div class="footer-social">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">in</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">▶</a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<h2>Plataforma</h2>
+<a href="pages/about.html">Sobre</a>
+<a href="pages/courses.html">Todos os programas</a>
+<a href="pages/case-studies.html">Casos de Estudo</a>
+<a href="pages/contact.html">Contacto</a>
+</div>
+<div class="footer-col">
+<h2>Programas</h2>
+<a href="courses/finance-transformation.html">Finance Transformation</a>
+<a href="courses/lean-six-sigma.html">Lean Six Sigma</a>
+<a href="courses/intelligent-automation.html">Automação Inteligente</a>
+<a href="courses/sap-finance.html">SAP Finance Ops</a>
+<span class="link-soon" title="Em breve">Kaizen</span>
+<a href="courses/5s-methodology.html">Metodologia 5S</a>
+<span class="link-soon" title="Em breve">Controlo Orçamental</span>
+<a href="courses/fiscalidade.html">Fiscalidade e Compliance</a>
+<span class="link-soon" title="Em breve">Preparação para Entrevistas</span>
+<span class="link-soon" title="Em breve">Sob Pressão</span>
+<a href="courses/lean-thinking.html">Lean Thinking</a>
+</div>
+<div class="footer-col">
+<h2>Contactos</h2>
+<a href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">YouTube</a>
+<a href="pages/contact.html">Pedido de formação</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Marlon B Siqueira · MBS Academy. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+<script defer="" src=".././javascript/main.js"></script>
+</body>
+</html>
