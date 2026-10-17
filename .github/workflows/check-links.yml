@@ -14,7 +14,7 @@ jobs:
   links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: lycheeverse/lychee-action@v2
         with:
           args: --offline --no-progress --root-dir "${{ github.workspace }}" index.html pages/*.html courses/*.html lessons/*.html case-studies/*.html
