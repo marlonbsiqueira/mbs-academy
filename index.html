@@ -43,10 +43,10 @@
         url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E");
     }
     .home-hero-inner { position: relative; z-index: 1; max-width: 780px; }
-    .home-hero .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 22px; }
+    .home-hero .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-ink); margin-bottom: 22px; }
     .home-hero .eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--teal); border-radius: 999px; }
     .home-hero h1 { font-family: var(--font-display); font-size: clamp(2.6rem, 4.5vw, 4.2rem); font-weight: 600; font-style: italic; letter-spacing: -0.03em; line-height: 1.06; color: #fff; margin-bottom: 24px; }
-    .home-hero h1 em { color: var(--teal); }
+    .home-hero h1 em { color: var(--teal-ink); }
     .home-hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.62); max-width: 540px; line-height: 1.82; margin-bottom: 38px; }
     .home-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
@@ -57,7 +57,7 @@
     .stat-cell:last-child { border-right: none; }
     .stat-cell:hover { background: var(--bg-alt); }
     .stat-val { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; font-style: italic; color: var(--blue); line-height: 1; margin-bottom: 4px; }
-    .stat-val.t { color: var(--teal); }
+    .stat-val.t { color: var(--teal-ink); }
     .stat-desc { font-size: 0.72rem; color: var(--text-3); font-weight: 500; line-height: 1.4; }
 
     /* ── COURSE CARDS WITH IMAGE COVERS ────────────── */
@@ -143,7 +143,7 @@
     .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
     .diff-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 28px; transition: transform 0.22s, box-shadow 0.22s; }
     .diff-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .diff-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; font-style: italic; color: var(--teal); line-height: 1; margin-bottom: 14px; }
+    .diff-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; font-style: italic; color: var(--teal-ink); line-height: 1; margin-bottom: 14px; }
     .diff-card h3 { font-family: var(--font-display); font-size: 1.02rem; font-weight: 600; font-style: italic; color: var(--text); margin-bottom: 10px; letter-spacing: -0.01em; }
     .diff-card p { font-size: 0.88rem; color: var(--text-2); line-height: 1.75; margin: 0; }
 
@@ -159,16 +159,16 @@
      */
     .instructor-avatar { width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), #4D6FFF); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; font-style: italic; color: #fff; margin: 0 auto 20px; }
     .instructor-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; font-style: italic; color: #fff; margin-bottom: 4px; }
-    .instructor-role { font-size: 0.8rem; color: rgba(255,255,255,0.46); margin-bottom: 20px; }
+    .instructor-role { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
     .instr-badges { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; }
     .instr-badge { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; background: rgba(27,59,255,0.2); border: 1px solid rgba(27,59,255,0.3); color: rgba(255,255,255,0.75); }
     .instr-badge.t { background: rgba(0,184,169,0.15); border-color: rgba(0,184,169,0.3); }
     .instructor-text h2 { font-family: var(--font-display); font-size: clamp(1.7rem, 2.4vw, 2.4rem); font-weight: 600; font-style: italic; color: #fff; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; }
-    .instructor-text h2 em { color: var(--teal); }
+    .instructor-text h2 em { color: var(--teal-ink); }
     .instructor-text p { font-size: 0.97rem; color: rgba(255,255,255,0.62); line-height: 1.88; margin-bottom: 14px; max-width: 560px; }
     .instr-metrics { display: flex; gap: 32px; flex-wrap: wrap; margin: 24px 0 32px; }
-    .instr-mv { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; font-style: italic; color: var(--teal); line-height: 1; margin-bottom: 3px; }
-    .instr-ml { font-size: 0.74rem; color: rgba(255,255,255,0.42); font-weight: 500; }
+    .instr-mv { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; font-style: italic; color: var(--teal-ink); line-height: 1; margin-bottom: 3px; }
+    .instr-ml { font-size: 0.74rem; color: rgba(255,255,255,0.6); font-weight: 500; }
 
     /* ── REVEAL ─────────────────────────────────────── */
     .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -536,7 +536,7 @@
             </div>
           </div>
           <div class="instructor-text reveal right">
-            <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:16px;">The instructor</div>
+            <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color: var(--teal-ink);margin-bottom:16px;">The instructor</div>
             <h2>Teaching what I do <em>right now.</em></h2>
             <p>I lead Finance Transformation and Intelligent Automation at a major European multinational SSC/GBS — one of the most complex shared services environments in Europe, spanning 15+ legal entities across 8+ countries. I also hold a Lean Six Sigma Black Belt built across global industrial and financial environments.</p>
             <p>The programs I teach here are a direct translation of what I have built and what I have seen work — and fail — across 12+ years and 5 countries. Not a summary of what I've read. The real thing.</p>
@@ -586,14 +586,14 @@
         </div>
         <div class="footer-links">
           <div class="footer-col">
-            <h4>Platform</h4>
+            <h2>Platform</h2>
             <a href="pages/about.html">About</a>
             <a href="pages/courses.html">All Programs</a>
             <a href="pages/case-studies.html">Case Studies</a>
             <a href="pages/contact.html">Contact</a>
           </div>
           <div class="footer-col">
-            <h4>Programs</h4>
+            <h2>Programs</h2>
             <a href="courses/finance-transformation.html">Finance Transformation</a>
             <a href="courses/lean-six-sigma.html">Lean Six Sigma</a>
             <a href="courses/intelligent-automation.html">Intelligent Automation</a>
@@ -607,7 +607,7 @@
             <a href="courses/lean-thinking.html">Pensamento Enxuto</a>
           </div>
           <div class="footer-col">
-            <h4>Connect</h4>
+            <h2>Connect</h2>
             <a href="https://www.linkedin.com/in/marlonbsiqueira/" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://www.youtube.com/@marlonbsiqueira468" target="_blank" rel="noopener">YouTube</a>
             <a href="pages/contact.html">Training inquiry</a>

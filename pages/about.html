@@ -45,9 +45,9 @@
       position: relative;
       z-index: 1;
     }
-    .about-eyebrow { color: var(--teal); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; display: block; }
+    .about-eyebrow { color: var(--teal-ink); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; display: block; }
     .about-hero-text h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 3.5vw, 3.4rem); font-weight: 600; font-style: italic; color: #fff; line-height: 1.08; letter-spacing: -0.025em; margin-bottom: 20px; }
-    .about-hero-text h1 em { color: var(--teal); }
+    .about-hero-text h1 em { color: var(--teal-ink); }
     .about-hero-text p { font-size: 1.05rem; color: rgba(255,255,255,0.66); max-width: 520px; line-height: 1.85; }
     .about-hero-card {
       background: rgba(255,255,255,0.05);
@@ -70,7 +70,7 @@
       margin: 0 auto 20px;
     }
     .about-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; font-style: italic; color: #fff; margin-bottom: 4px; }
-    .about-title-sub { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+    .about-title-sub { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
     .about-cert-list { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     .about-cert { background: rgba(27,59,255,0.2); border: 1px solid rgba(27,59,255,0.3); color: rgba(255,255,255,0.75); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; }
     .about-cert.teal { background: rgba(0,184,169,0.15); border-color: rgba(0,184,169,0.3); }
@@ -89,7 +89,7 @@
     .about-stat { padding: 28px 20px; text-align: center; border-right: 1px solid var(--border); }
     .about-stat:last-child { border-right: none; }
     .about-stat-value { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; font-style: italic; color: var(--blue); line-height: 1; margin-bottom: 6px; }
-    .about-stat-value.teal { color: var(--teal); }
+    .about-stat-value.teal { color: var(--teal-ink); }
     .about-stat-label { font-size: 0.79rem; color: var(--text-3); font-weight: 500; line-height: 1.4; }
 
     /* ── Expertise grid ── */
@@ -100,7 +100,7 @@
     .exp-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--text); }
     .exp-card ul { padding: 0; list-style: none; display: flex; flex-direction: column; gap: 5px; }
     .exp-card li { font-size: 0.84rem; color: var(--text-2); display: flex; align-items: flex-start; gap: 8px; }
-    .exp-card li::before { content: '—'; color: var(--teal); font-size: 0.7rem; margin-top: 3px; flex-shrink: 0; }
+    .exp-card li::before { content: '—'; color: var(--teal-ink); font-size: 0.7rem; margin-top: 3px; flex-shrink: 0; }
 
     /* ── Career timeline ── */
     .timeline { position: relative; padding-left: 32px; }
@@ -110,7 +110,7 @@
     .timeline-dot { position: absolute; left: -39px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--blue); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--blue); }
     .timeline-dot.teal { background: var(--teal); box-shadow: 0 0 0 2px var(--teal); }
     .timeline-date { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 5px; }
-    .timeline-org { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+    .timeline-org { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-ink); margin-bottom: 6px; }
     .timeline-item h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; font-style: italic; color: var(--text); margin-bottom: 8px; letter-spacing: -0.01em; }
     .timeline-item p { font-size: 0.88rem; color: var(--text-2); line-height: 1.72; margin: 0 0 8px; }
     .timeline-tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -120,7 +120,7 @@
     .metrics-highlight { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
     .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; text-align: center; }
     .metric-card-val { font-family: var(--font-display); font-size: 2rem; font-weight: 700; font-style: italic; color: var(--blue); line-height: 1; margin-bottom: 6px; }
-    .metric-card-val.teal { color: var(--teal); }
+    .metric-card-val.teal { color: var(--teal-ink); }
     .metric-card-label { font-size: 0.8rem; color: var(--text-3); line-height: 1.5; }
 
     /* ── Responsive ── */
@@ -285,7 +285,7 @@
           <div style="position:sticky; top:96px;">
             <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; margin-bottom:20px;">
               <div style="background:linear-gradient(135deg,var(--navy),var(--navy-700)); padding:20px 24px;">
-                <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); margin-bottom:10px;">Core credentials</div>
+                <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color: var(--teal-ink); margin-bottom:10px;">Core credentials</div>
               </div>
               <div style="padding:20px 24px; display:flex; flex-direction:column; gap:12px;">
                 <div style="display:flex; align-items:flex-start; gap:12px; padding-bottom:12px; border-bottom:1px solid var(--border);">
@@ -329,8 +329,8 @@
             <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:20px 24px;">
               <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:14px;">Languages</div>
               <div style="display:flex; flex-direction:column; gap:8px; font-size:0.87rem;">
-                <div style="display:flex; justify-content:space-between; color:var(--text-2);"><span>Portuguese</span><span style="color:var(--teal); font-weight:600;">Native</span></div>
-                <div style="display:flex; justify-content:space-between; color:var(--text-2);"><span>English</span><span style="color:var(--teal); font-weight:600;">Fluent</span></div>
+                <div style="display:flex; justify-content:space-between; color:var(--text-2);"><span>Portuguese</span><span style="color: var(--teal-ink); font-weight:600;">Native</span></div>
+                <div style="display:flex; justify-content:space-between; color:var(--text-2);"><span>English</span><span style="color: var(--teal-ink); font-weight:600;">Fluent</span></div>
                 <div style="display:flex; justify-content:space-between; color:var(--text-2);"><span>Spanish</span><span style="color:var(--text-3); font-weight:500;">Intermediate</span></div>
               </div>
             </div>
@@ -552,21 +552,21 @@
         </div>
         <div class="footer-links">
           <div class="footer-col">
-            <h4>Platform</h4>
+            <h2>Platform</h2>
             <a href="about.html">About</a>
             <a href="courses.html">Training</a>
             <a href="case-studies.html">Case Studies</a>
             <a href="contact.html">Contact</a>
           </div>
           <div class="footer-col">
-            <h4>Training</h4>
+            <h2>Training</h2>
             <a href="../courses/finance-transformation.html">Finance Transformation</a>
             <a href="../courses/lean-six-sigma.html">Lean Six Sigma</a>
             <a href="../courses/intelligent-automation.html">Intelligent Automation</a>
             <a href="../courses/sap-finance.html">SAP Finance Ops</a>
           </div>
           <div class="footer-col">
-            <h4>Connect</h4>
+            <h2>Connect</h2>
             <a href="https://www.linkedin.com/in/marlonbsiqueira/" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://www.youtube.com/@marlonbsiqueira468" target="_blank" rel="noopener">YouTube</a>
             <a href="contact.html">Training inquiry</a>
