@@ -193,7 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
       show(MSG.sending);
       try {
         const res = await fetch(form.action, {
-          method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form),
+          method: 'POST', headers: { Accept: 'application/json' },
+          body: new FormData(form),
+          signal: AbortSignal.timeout ? AbortSignal.timeout(20000) : undefined, // never hang on "sending"
         });
         const data = await res.json().catch(() => ({}));
         if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || res.status);
