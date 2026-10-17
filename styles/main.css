@@ -399,10 +399,16 @@ ul { list-style: none; }
   margin-bottom: 16px;
 }
 
+/* "8 modules · ~12 hours" on one line, the level always on the next:
+   identical rhythm on every card, no dangling separator */
+.course-meta > span { white-space: nowrap; }
+.course-meta > span:nth-child(4) { display: none; }
+.course-meta > span:nth-child(5) { flex-basis: 100%; }
 .course-meta {
   display: flex;
+  flex-wrap: wrap;          /* wrap whole items, never split "8 / modules" */
   align-items: center;
-  gap: 8px;
+  gap: 4px 8px;
   font-size: 0.8rem;
   color: var(--text-3);
   font-weight: 500;
