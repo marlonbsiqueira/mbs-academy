@@ -1192,3 +1192,10 @@ form button[disabled] { opacity: 0.6; cursor: wait; }
 
 /* "Coming soon" cards: no call-to-action until the page exists */
 .is-soon .course-card-footer, .is-soon .case-full-link, .is-soon .btn-text-link { display: none; }
+
+/* Off-canvas reveal animations must never let the page pan sideways
+   (iOS Safari ignores overflow-x on <body> alone). `clip`, unlike
+   `hidden`, creates no scroll container, so position: sticky still works. */
+@supports (overflow: clip) {
+    html, body { overflow-x: clip; }
+}
