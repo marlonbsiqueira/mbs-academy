@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>document.documentElement.classList.add("js")</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Training catalog — Finance Transformation, Lean Six Sigma, Intelligent Automation and SAP Finance courses by Marlon B Siqueira.">
   <title>Training Catalog | MBS Academy</title>
+  <link rel="canonical" href="https://marlonbsiqueira.github.io/mbs-academy/pages/courses.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0B1629">
+  <meta property="og:title" content="Training Catalog | MBS Academy">
+  <meta property="og:description" content="Training catalog — Finance Transformation, Lean Six Sigma, Intelligent Automation and SAP Finance courses by Marlon B Siqueira.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marlonbsiqueira.github.io/mbs-academy/pages/courses.html">
+  <meta property="og:site_name" content="MBS Academy">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/main.css">
   <style>
     .catalog-grid {
@@ -94,16 +108,16 @@
       <div class="container">
 
         <div class="filter-bar">
-          <button class="filter-btn active">All programs</button>
-          <button class="filter-btn">Finance</button>
-          <button class="filter-btn">Process Excellence</button>
-          <button class="filter-btn">Automation</button>
-          <button class="filter-btn">SAP</button>
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All programs</button>
+          <button type="button" class="filter-btn" data-filter="finance" aria-pressed="false">Finance</button>
+          <button type="button" class="filter-btn" data-filter="process" aria-pressed="false">Process Excellence</button>
+          <button type="button" class="filter-btn" data-filter="automation" aria-pressed="false">Automation</button>
+          <button type="button" class="filter-btn" data-filter="sap" aria-pressed="false">SAP</button>
         </div>
 
         <div class="catalog-grid">
 
-          <a href="../courses/finance-transformation.html" class="catalog-card reveal left">
+          <a href="../courses/finance-transformation.html" class="catalog-card reveal left" data-cat="finance">
             <div class="catalog-card-top">
               <div class="catalog-card-icon">📊</div>
               <h2>Finance Transformation</h2>
@@ -129,7 +143,7 @@
             </div>
           </a>
 
-          <a href="../courses/lean-six-sigma.html" class="catalog-card reveal">
+          <a href="../courses/lean-six-sigma.html" class="catalog-card reveal" data-cat="process">
             <div class="catalog-card-top">
               <div class="catalog-card-icon">⚙️</div>
               <h2>Lean Six Sigma &amp; Process Excellence</h2>
@@ -155,7 +169,7 @@
             </div>
           </a>
 
-          <a href="../courses/intelligent-automation.html" class="catalog-card reveal right">
+          <a href="../courses/intelligent-automation.html" class="catalog-card reveal right" data-cat="automation">
             <div class="catalog-card-top">
               <div class="catalog-card-icon">🤖</div>
               <h2>Intelligent Automation</h2>
@@ -181,7 +195,7 @@
             </div>
           </a>
 
-          <a href="../courses/sap-finance.html" class="catalog-card reveal left">
+          <a href="../courses/sap-finance.html" class="catalog-card reveal left" data-cat="sap finance">
             <div class="catalog-card-top">
               <div class="catalog-card-icon">🔷</div>
               <h2>SAP Finance Operations</h2>
@@ -262,6 +276,6 @@
     </div>
   </footer>
 
-  <script src="../javascript/main.js"></script>
+  <script defer src="../javascript/main.js"></script>
 </body>
 </html>
