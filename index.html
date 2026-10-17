@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>document.documentElement.classList.add("js")</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="MBS Academy — executive training in Finance Transformation, Lean Six Sigma, Intelligent Automation, SAP Finance, Kaizen, Budget Control and more. Built from 12+ years of real transformation work.">
-  <meta name="keywords" content="Finance Transformation Training, Lean Six Sigma, SAP S/4HANA, Intelligent Automation, Kaizen, 5S, Budget Control, Interview Preparation, Executive Education">
   <meta name="author" content="Marlon B Siqueira">
   <meta property="og:title" content="MBS Academy | Executive Training in Finance, Lean & Automation">
   <meta property="og:description" content="Practical programs built from real transformation experience — not classroom theory.">
   <meta property="og:type" content="website">
   <title>MBS Academy | Finance · Lean · Automation · SAP · Kaizen</title>
+  <link rel="canonical" href="https://marlonbsiqueira.github.io/mbs-academy/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0B1629">
+  <meta property="og:url" content="https://marlonbsiqueira.github.io/mbs-academy/">
+  <meta property="og:site_name" content="MBS Academy">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.css">
   <style>
 
@@ -143,8 +153,9 @@
     .instructor-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r-xl); padding: 36px; text-align: center; }
     /*
      * INSTRUCTOR PHOTO: Replace the avatar div below with:
-     * <img src="./images/instructor.jpg" alt="Marlon B Siqueira"
-     *      style="width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 20px;display:block;">
+     * an <img> pointing to images/instructor.jpg (alt "Marlon B Siqueira"),
+     * 110×110 px, border-radius 50%, object-fit cover — see the HTML comment
+     * in the instructor section for the ready-made tag.
      */
     .instructor-avatar { width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), #4D6FFF); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; font-style: italic; color: #fff; margin: 0 auto 20px; }
     .instructor-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; font-style: italic; color: #fff; margin-bottom: 4px; }
@@ -160,10 +171,10 @@
     .instr-ml { font-size: 0.74rem; color: rgba(255,255,255,0.42); font-weight: 500; }
 
     /* ── REVEAL ─────────────────────────────────────── */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.left  { transform: translateX(-24px); }
-    .reveal.right { transform: translateX(24px); }
-    .reveal.show  { opacity: 1; transform: none; }
+    .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .js .reveal.left  { transform: translateX(-24px); }
+    .js .reveal.right { transform: translateX(24px); }
+    .js .reveal.show  { opacity: 1; transform: none; }
 
     /* ── RESPONSIVE ─────────────────────────────────── */
     @media (max-width: 1100px) {
@@ -340,7 +351,7 @@
           </a>
 
           <!-- Kaizen -->
-          <a href="courses/kaizen.html" class="course-card reveal left">
+          <div class="course-card reveal left is-soon" aria-disabled="true"><span class="soon-badge">Coming soon</span>
             <div class="course-cover">
               <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=640&h=360&fit=crop&auto=format" alt="Kaizen" loading="lazy">
               <div class="course-cover-bg cg-kaizen"></div>
@@ -354,10 +365,10 @@
               <div class="course-meta"><span>6 modules</span><span>·</span><span>~8 hours</span><span>·</span><span>Foundation → Intermediate</span></div>
             </div>
             <div class="course-card-footer"><span class="btn-text-link">View program →</span></div>
-          </a>
+          </div>
 
           <!-- Budget Control -->
-          <a href="courses/budget-control.html" class="course-card reveal">
+          <div class="course-card reveal is-soon" aria-disabled="true"><span class="soon-badge">Coming soon</span>
             <div class="course-cover">
               <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=640&h=360&fit=crop&auto=format" alt="Budget Control" loading="lazy">
               <div class="course-cover-bg cg-budget"></div>
@@ -371,10 +382,10 @@
               <div class="course-meta"><span>7 modules</span><span>·</span><span>~9 hours</span><span>·</span><span>Foundation → Advanced</span></div>
             </div>
             <div class="course-card-footer"><span class="btn-text-link">View program →</span></div>
-          </a>
+          </div>
 
           <!-- Interview Prep -->
-          <a href="courses/interview-prep.html" class="course-card reveal">
+          <div class="course-card reveal is-soon" aria-disabled="true"><span class="soon-badge">Coming soon</span>
             <div class="course-cover">
               <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=640&h=360&fit=crop&auto=format" alt="Interview Preparation" loading="lazy">
               <div class="course-cover-bg cg-career"></div>
@@ -388,10 +399,10 @@
               <div class="course-meta"><span>6 modules</span><span>·</span><span>~7 hours</span><span>·</span><span>All levels</span></div>
             </div>
             <div class="course-card-footer"><span class="btn-text-link">View program →</span></div>
-          </a>
+          </div>
 
           <!-- Under Pressure -->
-          <a href="courses/under-pressure.html" class="course-card reveal right">
+          <div class="course-card reveal right is-soon" aria-disabled="true"><span class="soon-badge">Coming soon</span>
             <div class="course-cover">
               <img src="https://images.unsplash.com/photo-1573496799515-9fd8db875b67?w=640&h=360&fit=crop&auto=format" alt="Working Under Pressure" loading="lazy">
               <div class="course-cover-bg cg-pressure"></div>
@@ -405,7 +416,7 @@
               <div class="course-meta"><span>5 modules</span><span>·</span><span>~6 hours</span><span>·</span><span>Intermediate → Senior</span></div>
             </div>
             <div class="course-card-footer"><span class="btn-text-link">View program →</span></div>
-          </a>
+          </div>
 
           <!-- 5S Methodology -->
           <a href="courses/5s-methodology.html" class="course-card reveal left">
@@ -587,12 +598,12 @@
             <a href="courses/lean-six-sigma.html">Lean Six Sigma</a>
             <a href="courses/intelligent-automation.html">Intelligent Automation</a>
             <a href="courses/sap-finance.html">SAP Finance Ops</a>
-            <a href="courses/kaizen.html">Kaizen</a>
+            <span class="link-soon" title="Coming soon">Kaizen</span>
             <a href="courses/5s-methodology.html">5S Methodology</a>
-            <a href="courses/budget-control.html">Budget Control</a>
+            <span class="link-soon" title="Coming soon">Budget Control</span>
             <a href="courses/fiscalidade.html">Fiscalidade</a>
-            <a href="courses/interview-prep.html">Interview Preparation</a>
-            <a href="courses/under-pressure.html">Under Pressure</a>
+            <span class="link-soon" title="Coming soon">Interview Preparation</span>
+            <span class="link-soon" title="Coming soon">Under Pressure</span>
             <a href="courses/lean-thinking.html">Pensamento Enxuto</a>
           </div>
           <div class="footer-col">
@@ -609,6 +620,6 @@
     </div>
   </footer>
 
-  <script src="./javascript/main.js"></script>
+  <script defer src="./javascript/main.js"></script>
 </body>
 </html>

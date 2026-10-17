@@ -50,6 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    // Close with Escape and return focus to the toggle
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape' || !navInner.classList.contains('menu-open')) return;
+      mobileToggle.click();
+      mobileToggle.focus();
+    });
+
     // Close on outside click
     document.addEventListener('click', (e) => {
       if (!navInner.contains(e.target) && navInner.classList.contains('menu-open')) {
@@ -91,29 +98,40 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('show'));
   }
 
-  /* ── Course filter buttons (catalog page) ── */
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  if (filterBtns.length > 0) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        // Future: implement actual filtering logic here
-        // For now, all cards remain visible
+  /* ── Course filter buttons (catalog page) ──
+     Each button has data-filter; each card lists its areas in data-cat
+     (e.g. data-cat="sap finance"). "all" shows every card. */
+  const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+  const catalogCards = document.querySelectorAll('[data-cat]');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      filterBtns.forEach(b => {
+        b.classList.toggle('active', b === btn);
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+      catalogCards.forEach(card => {
+        const show = f === 'all' || card.dataset.cat.split(' ').includes(f);
+        card.hidden = !show;
+        if (show) card.classList.add('show'); // skip the scroll-reveal for re-shown cards
       });
     });
-  }
+  });
 
-  /* ── Module accordion ── */
+  /* ── Module accordion (keyboard + screen-reader friendly) ── */
   document.querySelectorAll('.module-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const item = header.closest('.module-item-block');
-      if (!item) return;
-      // Close others (optional — comment out for multi-open behavior)
-      // document.querySelectorAll('.module-item-block.open').forEach(openItem => {
-      //   if (openItem !== item) openItem.classList.remove('open');
-      // });
-      item.classList.toggle('open');
+    const item = header.closest('.module-item-block');
+    if (!item) return;
+    header.setAttribute('role', 'button');
+    header.tabIndex = 0;
+    header.setAttribute('aria-expanded', String(item.classList.contains('open')));
+    const toggle = () => {
+      const open = item.classList.toggle('open');
+      header.setAttribute('aria-expanded', String(open));
+    };
+    header.addEventListener('click', toggle);
+    header.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
     });
   });
 
@@ -123,7 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(link.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        history.pushState(null, '', link.getAttribute('href')); // keep the section linkable
       }
     });
   });
@@ -136,17 +156,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Active nav link highlighting ── */
-  // Mark the current page's nav link as active based on URL
-  const currentPath = window.location.pathname;
-  document.querySelectorAll('.nav-link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && (
-      currentPath.endsWith(href) ||
-      (href !== '../index.html' && href !== 'index.html' && currentPath.includes(href.replace('../', '').replace('.html', '')))
-    )) {
+  /* ── Active nav link highlighting ──
+     Compare resolved URLs, so it works from any folder depth. */
+  const here = new URL(window.location.href);
+  const normalise = p => p.replace(/index\.html$/, '');
+  document.querySelectorAll('.nav-link[href]').forEach(link => {
+    const target = new URL(link.getAttribute('href'), here);
+    if (normalise(target.pathname) === normalise(here.pathname)) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
+  });
+
+  /* ── Contact form: send in place with a status message ──
+     Posts to the Web3Forms API; without JS the normal POST still works. */
+  document.querySelectorAll('form.js-ajax-form').forEach(form => {
+    if (!window.fetch) return;
+    const status = form.querySelector('.form-status');
+    const button = form.querySelector('[type="submit"]');
+    const pt = document.documentElement.lang === 'pt';
+    const MSG = {
+      sending: pt ? 'A enviar…' : 'Sending…',
+      ok: pt ? 'Obrigado — a sua mensagem foi enviada.' : 'Thank you — your message has been sent.',
+      error: pt ? 'Não foi possível enviar. Tente novamente ou escreva para email-removed.'
+                : 'Sorry, the message could not be sent. Please try again or email email-removed.',
+    };
+    const show = (text, isError) => {
+      if (!status) return;
+      status.hidden = false; status.textContent = text;
+      status.classList.toggle('is-error', !!isError);
+    };
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (form.elements.botcheck && form.elements.botcheck.checked) return; // bot
+      button.disabled = true;
+      show(MSG.sending);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || res.status);
+        form.reset();
+        show(MSG.ok);
+      } catch (err) {
+        show(MSG.error, true);
+      } finally {
+        button.disabled = false;
+      }
+    });
   });
 
 });
