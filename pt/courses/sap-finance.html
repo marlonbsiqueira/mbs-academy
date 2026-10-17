@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<script>document.documentElement.classList.add("js")</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Programa SAP Finance Operations — S/4HANA para profissionais de finanças: R2R, P2P, OTC, reporte financeiro e integração com Power BI." name="description"/>
+<title>SAP Finance Operations | MBS Academy</title>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/sap-finance.html" rel="canonical"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/courses/sap-finance.html" hreflang="en" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/sap-finance.html" hreflang="pt" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/courses/sap-finance.html" hreflang="x-default" rel="alternate"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0B1629" name="theme-color"/>
+<meta content="SAP Finance Operations | MBS Academy" property="og:title"/>
+<meta content="Programa SAP Finance Operations — S/4HANA para profissionais de finanças: R2R, P2P, OTC, reporte financeiro e integração com Power BI." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/sap-finance.html" property="og:url"/>
+<meta content="MBS Academy" property="og:site_name"/>
+<meta content="pt_PT" property="og:locale"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Plus+Jakarta+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/main.css" rel="stylesheet"/>
+<style>
+    .course-detail-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; padding: 64px 0; }
+    .course-sticky-card { position: sticky; top: 96px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+    .sticky-card-header { background: linear-gradient(135deg, var(--navy), var(--navy-700)); padding: 28px; text-align: center; }
+    .sticky-card-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .sticky-card-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; font-style: italic; color: #fff; }
+    .sticky-card-body { padding: 24px; }
+    .sticky-meta { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .sticky-meta-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .sticky-meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .sticky-meta-label { font-size: 0.8rem; color: var(--text-3); }
+    .sticky-meta-value { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+
+    .objectives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .objective-item { display: flex; align-items: flex-start; gap: 10px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px; }
+    .objective-check { color: var(--teal-ink); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+    .objective-item p { font-size: 0.87rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+
+    .module-accordion { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+    .module-item-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+    .module-header { display: flex; align-items: center; gap: 16px; padding: 18px 20px; cursor: pointer; user-select: none; }
+    .module-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--teal-ink); width: 28px; flex-shrink: 0; }
+    .module-title-text { font-weight: 600; font-size: 0.95rem; color: var(--text); flex: 1; }
+    .module-duration { font-size: 0.8rem; color: var(--text-3); flex-shrink: 0; }
+    .module-body { padding: 0 20px 18px 64px; display: none; }
+    .module-item-block.open .module-body { display: block; }
+    .module-lessons { display: flex; flex-direction: column; gap: 6px; }
+    .module-lesson { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--text-2); padding: 6px 0; }
+    .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-md); flex-shrink: 0; }
+
+    .audience-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .audience-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--bg-alt); border-radius: var(--r-sm); font-size: 0.9rem; color: var(--text-2); }
+    .audience-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    .process-flow { display: flex; gap: 0; margin: 24px 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
+    .process-step { flex: 1; padding: 18px 16px; text-align: center; border-right: 1px solid var(--border); position: relative; }
+    .process-step:last-child { border-right: none; }
+    .process-step-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-ink); margin-bottom: 6px; }
+    .process-step-name { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+    .process-step-sub { font-size: 0.76rem; color: var(--text-3); margin-top: 4px; }
+
+    @media (max-width: 960px) { .course-detail-layout { grid-template-columns: 1fr; } .course-sticky-card { position: static; } .objectives-grid { grid-template-columns: 1fr; } .process-flow { flex-direction: column; } .process-step { border-right: none; border-bottom: 1px solid var(--border); } .process-step:last-child { border-bottom: none; } }
+  </style>
+</head>
+<body>
+<header class="site-header" id="site-header">
+<nav class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="brand-initials">MBS</span>
+<span class="brand-name">Academy</span>
+</a>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="../index.html">Início</a></li>
+<li><a class="nav-link" href="../pages/about.html">Sobre</a></li>
+<li><a class="nav-link active" href="../pages/courses.html">Formação</a></li>
+<li><a class="nav-link" href="../pages/case-studies.html">Casos de Estudo</a></li>
+<li><a class="nav-link" href="../pages/contact.html">Contacto</a></li>
+</ul>
+<div aria-label="Língua" class="lang-switch" role="group"><a data-lang-link="en" href="../../courses/sap-finance.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang-link="pt" href="sap-finance.html" hreflang="pt" lang="pt">PT</a></div>
+<a class="btn btn-primary nav-cta" href="../pages/contact.html">Falar connosco</a>
+<button aria-label="Abrir/fechar navegação" class="mobile-toggle" id="mobile-toggle">
+<span></span><span></span><span></span>
+</button>
+</nav>
+</header>
+<main>
+<section class="page-hero">
+<div class="container">
+<div class="page-hero-inner">
+<span class="eyebrow">SAP · S/4HANA · Finanças · Power BI</span>
+<h1>SAP Finance Operations</h1>
+<p>SAP S/4HANA para profissionais de finanças — R2R, P2P e OTC de ponta a ponta, reporte financeiro, otimização pós-arranque e integração com Power BI. Criado por quem liderou o UAT e a otimização pós-arranque em mais de 15 entidades jurídicas europeias e continua a trabalhar no sistema todos os dias.</p>
+<div class="hero-actions">
+<a class="btn btn-white btn-lg" href="../pages/contact.html">Inscrever ou saber mais</a>
+<a class="btn btn-ghost-white btn-lg" href="#modules">Ver módulos</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="course-detail-layout">
+<!-- Main content -->
+<div>
+<div class="section-label">Visão geral do programa</div>
+<h2 class="section-title">O que este programa cobre.</h2>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:20px;">A maioria da formação em SAP é técnica demais (escrita para consultores) ou genérica demais (escrita para gestores que nunca tocam no sistema). Este programa fica no meio: foi escrito para profissionais de finanças que precisam de trabalhar bem no S/4HANA, perceber o que ele faz e não faz, extrair e usar dados financeiros e participar de forma útil em conversas de implementação e otimização.</p>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:32px;">Cada módulo assenta em experiência ativa: liderar o UAT de uma implementação SAP S/4HANA europeia com mais de 15 entidades, conduzir a otimização pós-arranque, construir a integração Power BI que substituiu o reporte standard do SAP para mais de 70 líderes e resolver as lacunas reais que surgem depois do arranque.</p>
+<div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:12px;">Os três processos financeiros centrais abordados</div>
+<div class="process-flow">
+<div class="process-step">
+<div class="process-step-label">Módulo 2</div>
+<div class="process-step-name">Record to Report</div>
+<div class="process-step-sub">Razão geral · Lançamentos · Fecho mensal · Consolidação</div>
+</div>
+<div class="process-step">
+<div class="process-step-label">Módulo 3</div>
+<div class="process-step-name">Purchase to Pay</div>
+<div class="process-step-sub">Procurement · Contas a pagar · 3-way match · Gestão de fornecedores</div>
+</div>
+<div class="process-step">
+<div class="process-step-label">Módulo 4</div>
+<div class="process-step-name">Order to Cash</div>
+<div class="process-step-sub">Encomendas de clientes · Contas a receber · Crédito · Cobranças</div>
+</div>
+</div>
+<h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">Para quem é</h3>
+<div class="audience-list">
+<div class="audience-item"><span class="audience-icon">📊</span> Finance managers e controllers em ambientes SAP que querem trabalhar de forma mais rápida e inteligente</div>
+<div class="audience-item"><span class="audience-icon">🔄</span> Profissionais a preparar ou a participar numa implementação ou migração para S/4HANA</div>
+<div class="audience-item"><span class="audience-icon">🔷</span> Finance business partners que precisam de perceber as estruturas de dados do SAP para extrair melhores insights</div>
+<div class="audience-item"><span class="audience-icon">⚙️</span> Responsáveis de melhoria de processos com processos financeiros SAP no âmbito</div>
+<div class="audience-item"><span class="audience-icon">📈</span> Analistas que constroem relatórios Power BI sobre dados SAP</div>
+</div>
+<h3 id="objectives" style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">O que vai conseguir fazer</h3>
+<div class="objectives-grid">
+<div class="objective-item"><span class="objective-check">✓</span><p>Navegar no SAP S/4HANA Finance com confiança e extrair os dados de que precisa para decidir</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Perceber os fluxos dos processos R2R, P2P e OTC e identificar oportunidades de melhoria em cada um</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Executar as atividades de fecho mensal no SAP com confiança e menos esforço manual</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Construir extrações financeiras SAP que alimentam diretamente dashboards Power BI</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Participar de forma útil em projetos de implementação SAP — fases de UAT, arranque e pós-arranque</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Identificar e resolver as lacunas pós-arranque mais comuns nas configurações financeiras do SAP</p></div>
+</div>
+<h3 id="modules" style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">Módulos do programa</h3>
+<div class="module-accordion">
+<div class="module-item-block open">
+<div class="module-header">
+<span class="module-num">01</span>
+<span class="module-title-text">SAP S/4HANA Finance — Arquitetura e Navegação para Profissionais</span>
+<span class="module-duration">~85 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>S/4HANA vs. ECC: o que realmente mudou e porque importa para as equipas financeiras</div>
+<div class="module-lesson"><span class="lesson-dot"></span>O Universal Journal (ACDOCA): a estrutura de dados central do S/4HANA Finance</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Navegação, códigos de transação e apps Fiori para finanças</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Plano de contas, centros de custo, centros de lucro e áreas de controlling — como funcionam em conjunto</div>
+<div class="module-lesson"><span class="lesson-dot"></span>A estrutura de 15 entidades: como diferem as configurações SAP multientidade das de entidade única</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">02</span>
+<span class="module-title-text">Record-to-Report (R2R) no SAP S/4HANA</span>
+<span class="module-duration">~110 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Lançamentos no razão geral, lançamentos manuais e compensações no S/4HANA</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Atividades de fecho mensal: acréscimos, provisões, reconciliações intercompanhia</div>
+<div class="module-lesson"><span class="lesson-dot"></span>A checklist de fecho automatizada que reduziu o fecho mensal de 8 para 6 dias num SSC/GBS com 15 entidades</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Consolidação e reporte de grupo no S/4HANA</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Tratamento de IFRS vs. GAAP no Universal Journal</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">03</span>
+<span class="module-title-text">Purchase-to-Pay (P2P) no SAP S/4HANA</span>
+<span class="module-duration">~95 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>O ciclo P2P de ponta a ponta: requisição, nota de encomenda, receção, fatura, pagamento</div>
+<div class="module-lesson"><span class="lesson-dot"></span>3-way match no SAP: como funciona e o que o faz falhar</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Gestão de contas a pagar e reconciliação de fornecedores</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Integração com SAP Ariba e controlos de procurement para compliance SOX</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Estrangulamentos P2P comuns em ambientes multientidade e como os resolver</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">04</span>
+<span class="module-title-text">Order-to-Cash (OTC) no SAP S/4HANA</span>
+<span class="module-duration">~90 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>O ciclo OTC: encomenda, entrega, faturação, contas a receber, aplicação de recebimentos</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Gestão de crédito e risco de cliente no S/4HANA</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Gestão de contas a receber: análise de antiguidade, cartas de cobrança, cobranças</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Reconhecimento de receita segundo a IFRS 15 no S/4HANA</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Faturação e reconciliação intercompanhia entre entidades jurídicas</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">05</span>
+<span class="module-title-text">Reporte Financeiro e Extração de Dados no SAP</span>
+<span class="module-duration">~100 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Relatórios financeiros standard do SAP: demonstração de resultados, balanço e fluxos de caixa no S/4HANA</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Reporte flexível do razão: movimentos, balancete, análise comparativa</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Técnicas de extração de dados: relatórios ALV, SAP Query, extrações à medida</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Ligar dados SAP ao Excel e ao Power BI para reporte de gestão</div>
+<div class="module-lesson"><span class="lesson-dot"></span>A arquitetura de reporte construída num SSC europeu com 15 entidades: dos dados em bruto do SAP aos dashboards para mais de 70 líderes</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">06</span>
+<span class="module-title-text">Integração SAP + Power BI</span>
+<span class="module-duration">~105 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Padrões de ligação: OData, SAP BW, extração em ficheiro, conector direto</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Estruturar dados SAP para Power BI: tabelas, relações e colunas calculadas</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Construir dashboards financeiros sobre dados SAP: resultados, balanço, posição de tesouraria, KPIs</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Automatizar a atualização de dados: extração agendada e envio para o Power BI</div>
+<div class="module-lesson"><span class="lesson-dot"></span>A arquitetura de dashboards que substituiu o reporte standard do SAP para mais de 70 líderes seniores na Europa</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">07</span>
+<span class="module-title-text">Otimização Pós-Arranque e Padrões de Falha Comuns</span>
+<span class="module-duration">~95 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Porque é que os arranques SAP muitas vezes não entregam os benefícios prometidos — e o que fazer</div>
+<div class="module-lesson"><span class="lesson-dot"></span>As 15 lacunas financeiras pós-arranque mais comuns (da experiência real num SSC/GBS com 15 entidades)</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Gestão da mudança para equipas financeiras após o arranque: adoção, formação, alinhamento de processos</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Como construir o roadmap de otimização pós-arranque — priorizar esforço vs. impacto</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Planeamento e execução de UAT: o que testar, como testar, como escalar</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-teal" style="margin-top:40px;">
+<div class="callout-label">Construído a partir da experiência de implementação em mais de 15 entidades</div>
+<p>Este programa baseia-se na participação ativa na implementação do SAP S/4HANA em mais de 15 entidades jurídicas europeias de uma multinacional do setor automóvel presente no ranking Fortune — incluindo a liderança do UAT, a resolução de falhas de integração, a construção da arquitetura de reporte após o arranque e a otimização de processos que reduziu o fecho mensal de 8 para 6 dias. Os desafios aqui abordados são os que realmente surgiram em produção.</p>
+</div>
+</div>
+<!-- Sticky sidebar -->
+<div>
+<div class="course-sticky-card">
+<div class="sticky-card-header">
+<div class="sticky-card-icon">🔷</div>
+<div class="sticky-card-title">SAP Finance Operations</div>
+</div>
+<div class="sticky-card-body">
+<div class="sticky-meta">
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Nível</span>
+<span class="sticky-meta-value">Intermédio</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Duração</span>
+<span class="sticky-meta-value">~10 horas</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Módulos</span>
+<span class="sticky-meta-value">7 módulos</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Entrega</span>
+<span class="sticky-meta-value">Online · Presencial disponível</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Pré-requisitos</span>
+<span class="sticky-meta-value">Experiência em finanças é útil</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Versão SAP</span>
+<span class="sticky-meta-value">S/4HANA (1909 → atual)</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Certificado</span>
+<span class="sticky-meta-value">Na conclusão</span>
+</div>
+</div>
+<a class="btn btn-primary sticky-cta btn-lg" href="../pages/contact.html">Inscrever ou saber mais</a>
+<p style="font-size:0.78rem; color:var(--text-3); text-align:center; margin-top:12px;">Formação para equipas disponível — contacte para saber preços</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta-strip">
+<div class="container">
+<div class="cta-strip-inner">
+<div class="cta-strip-text">
+<h2>Pronto para trabalhar de forma mais inteligente no SAP?</h2>
+<p>Inscreva-se no programa SAP Finance Operations ou explore o catálogo completo de formação.</p>
+</div>
+<div class="cta-strip-actions">
+<a class="btn btn-white btn-lg" href="../pages/contact.html">Falar connosco</a>
+<a class="btn btn-ghost-white btn-lg" href="../pages/courses.html">Ver todos os programas</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">MBS Academy</div>
+<p>Formação executiva em Finance Transformation, Excelência de Processos, SAP e Automação Inteligente.</p>
+<div class="footer-social">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">in</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">▶</a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<h2>Plataforma</h2>
+<a href="../pages/about.html">Sobre</a>
+<a href="../pages/courses.html">Formação</a>
+<a href="../pages/case-studies.html">Casos de Estudo</a>
+<a href="../pages/contact.html">Contacto</a>
+</div>
+<div class="footer-col">
+<h2>Formação</h2>
+<a href="finance-transformation.html">Finance Transformation</a>
+<a href="lean-six-sigma.html">Lean Six Sigma</a>
+<a href="intelligent-automation.html">Automação Inteligente</a>
+<a href="sap-finance.html">SAP Finance Ops</a>
+</div>
+<div class="footer-col">
+<h2>Contactos</h2>
+<a href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">YouTube</a>
+<a href="../pages/contact.html">Pedido de formação</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom"><p>© 2026 Marlon B Siqueira · MBS Academy. Todos os direitos reservados.</p></div>
+</div>
+</footer>
+<script defer="" src="../../javascript/main.js"></script>
+</body>
+</html>

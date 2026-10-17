@@ -209,4 +209,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── Course cover photos come from Unsplash. If one fails (CDN down,
+       blocked network) drop it so the course's own gradient cover shows,
+       instead of a broken-image icon over the alt text. ── */
+  document.querySelectorAll('.course-cover img').forEach(img => {
+    const drop = () => img.remove();
+    if (img.complete && img.naturalWidth === 0) drop();
+    else img.addEventListener('error', drop, { once: true });
+  });
+
 });

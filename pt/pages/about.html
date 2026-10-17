@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<script>document.documentElement.classList.add("js")</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Marlon B Siqueira — Finance Transformation Manager, Lean Six Sigma Green Belt, especialista em SAP S/4HANA e arquiteto de automação inteligente, com mais de 12 anos em 5 países." name="description"/>
+<title>Sobre o Formador | MBS Academy</title>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/pages/about.html" rel="canonical"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pages/about.html" hreflang="en" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/pages/about.html" hreflang="pt" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pages/about.html" hreflang="x-default" rel="alternate"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0B1629" name="theme-color"/>
+<meta content="Sobre o Formador | MBS Academy" property="og:title"/>
+<meta content="Marlon B Siqueira — Finance Transformation Manager, Lean Six Sigma Green Belt, especialista em SAP S/4HANA e arquiteto de automação inteligente, com mais de 12 anos em 5 países." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/pt/pages/about.html" property="og:url"/>
+<meta content="MBS Academy" property="og:site_name"/>
+<meta content="pt_PT" property="og:locale"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Plus+Jakarta+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/main.css" rel="stylesheet"/>
+<style>
+    /* ── About hero ── */
+    .about-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-700) 100%);
+      padding: 96px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .about-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .about-eyebrow { color: var(--teal-ink); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px; display: block; }
+    .about-hero-text h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 3.5vw, 3.4rem); font-weight: 600; font-style: italic; color: #fff; line-height: 1.08; letter-spacing: -0.025em; margin-bottom: 20px; }
+    .about-hero-text h1 em { color: var(--teal-ink); }
+    .about-hero-text p { font-size: 1.05rem; color: rgba(255,255,255,0.66); max-width: 520px; line-height: 1.85; }
+    .about-hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--r-xl);
+      padding: 36px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    .about-avatar {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), #4D6FFF);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      margin: 0 auto 20px;
+    }
+    .about-name { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; font-style: italic; color: #fff; margin-bottom: 4px; }
+    .about-title-sub { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .about-cert-list { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .about-cert { background: rgba(27,59,255,0.2); border: 1px solid rgba(27,59,255,0.3); color: rgba(255,255,255,0.75); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; }
+    .about-cert.teal { background: rgba(0,184,169,0.15); border-color: rgba(0,184,169,0.3); }
+
+    /* ── Stats ── */
+    .about-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      margin: 48px 0;
+    }
+    .about-stat { padding: 28px 20px; text-align: center; border-right: 1px solid var(--border); }
+    .about-stat:last-child { border-right: none; }
+    .about-stat-value { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; font-style: italic; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+    .about-stat-value.teal { color: var(--teal-ink); }
+    .about-stat-label { font-size: 0.79rem; color: var(--text-3); font-weight: 500; line-height: 1.4; }
+
+    /* ── Expertise grid ── */
+    .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
+    .exp-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; }
+    .exp-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .exp-icon { font-size: 1.3rem; }
+    .exp-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--text); }
+    .exp-card ul { padding: 0; list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .exp-card li { font-size: 0.84rem; color: var(--text-2); display: flex; align-items: flex-start; gap: 8px; }
+    .exp-card li::before { content: '—'; color: var(--teal-ink); font-size: 0.7rem; margin-top: 3px; flex-shrink: 0; }
+
+    /* ── Career timeline ── */
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--blue), var(--teal)); border-radius: 999px; }
+    .timeline-item { position: relative; margin-bottom: 36px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot { position: absolute; left: -39px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--blue); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--blue); }
+    .timeline-dot.teal { background: var(--teal); box-shadow: 0 0 0 2px var(--teal); }
+    .timeline-date { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 5px; }
+    .timeline-org { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-ink); margin-bottom: 6px; }
+    .timeline-item h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; font-style: italic; color: var(--text); margin-bottom: 8px; letter-spacing: -0.01em; }
+    .timeline-item p { font-size: 0.88rem; color: var(--text-2); line-height: 1.72; margin: 0 0 8px; }
+    .timeline-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .timeline-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; background: var(--bg-alt); border: 1px solid var(--border); color: var(--text-3); }
+
+    /* ── Metrics grid ── */
+    .metrics-highlight { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+    .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; text-align: center; }
+    .metric-card-val { font-family: var(--font-display); font-size: 2rem; font-weight: 700; font-style: italic; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+    .metric-card-val.teal { color: var(--teal-ink); }
+    .metric-card-label { font-size: 0.8rem; color: var(--text-3); line-height: 1.5; }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .about-hero-inner { grid-template-columns: 1fr; }
+      .about-hero-card { max-width: 320px; margin: 0 auto; }
+      .expertise-grid { grid-template-columns: 1fr 1fr; }
+      .about-stats-row { grid-template-columns: repeat(2, 1fr); }
+      .about-stat:nth-child(2) { border-right: none; }
+      .about-stat:nth-child(3) { border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
+      .about-stat:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+      .metrics-highlight { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .expertise-grid { grid-template-columns: 1fr; }
+      .metrics-highlight { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" id="site-header">
+<nav class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="brand-initials">MBS</span>
+<span class="brand-name">Academy</span>
+</a>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="../index.html">Início</a></li>
+<li><a class="nav-link active" href="about.html">Sobre</a></li>
+<li><a class="nav-link" href="courses.html">Formação</a></li>
+<li><a class="nav-link" href="case-studies.html">Casos de Estudo</a></li>
+<li><a class="nav-link" href="contact.html">Contacto</a></li>
+</ul>
+<div aria-label="Língua" class="lang-switch" role="group"><a data-lang-link="en" href="../../pages/about.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang-link="pt" href="about.html" hreflang="pt" lang="pt">PT</a></div>
+<a class="btn btn-primary nav-cta" href="courses.html">Ver formações</a>
+<button aria-label="Abrir/fechar navegação" class="mobile-toggle" id="mobile-toggle">
+<span></span><span></span><span></span>
+</button>
+</nav>
+</header>
+<main>
+<!-- ── HERO ── -->
+<section class="about-hero">
+<div class="container">
+<div class="about-hero-inner">
+<div class="about-hero-text">
+<span class="about-eyebrow">O formador</span>
+<h1>Não ensino o que já fiz.<br/><em>Ensino o que estou a fazer agora.</em></h1>
+<p>Lidero a Transformação Financeira com SAP S/4HANA e a Automação Inteligente numa multinacional europeia do setor automóvel presente no ranking Fortune — um dos ambientes SSC/GBS mais complexos da Europa, com mais de 15 entidades jurídicas em mais de 8 países. Cada programa que ensino aqui é uma tradução direta do que construí, implementei e sustentei à escala operacional. É a única credencial que importa neste contexto.</p>
+</div>
+<div class="about-hero-card">
+<div class="about-avatar">MB</div>
+<div class="about-name">Marlon B. Siqueira</div>
+<div class="about-title-sub">Finance Transformation Manager · Porto, Portugal</div>
+<div class="about-cert-list">
+<span class="about-cert">Lean Six Sigma Green Belt</span>
+<span class="about-cert teal">SAP S/4HANA</span>
+<span class="about-cert">Power BI · DAX avançado</span>
+<span class="about-cert teal">RPA · Blue Prism</span>
+<span class="about-cert">Power Platform</span>
+<span class="about-cert teal">IFRS · SOX · GDPR</span>
+<span class="about-cert">Cidadão da UE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ── STATS ROW ── -->
+<section class="section" style="padding-top: 56px; padding-bottom: 0;">
+<div class="container">
+<div class="about-stats-row">
+<div class="about-stat">
+<div class="about-stat-value">12+</div>
+<div class="about-stat-label">Anos de experiência internacional</div>
+</div>
+<div class="about-stat">
+<div class="about-stat-value teal">15+</div>
+<div class="about-stat-label">Entidades jurídicas em mais de 8 países</div>
+</div>
+<div class="about-stat">
+<div class="about-stat-value">€200K+</div>
+<div class="about-stat-label">Poupanças de produtividade acumuladas</div>
+</div>
+<div class="about-stat">
+<div class="about-stat-value teal">~9 FTE</div>
+<div class="about-stat-label">Contributo direto em eficiência</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ── BIO ── -->
+<section class="section">
+<div class="container">
+<div style="display: grid; grid-template-columns: 1fr 340px; gap: 64px; align-items: start;">
+<div>
+<div class="section-label">Percurso</div>
+<h2 class="section-title">Das finanças operacionais à arquitetura de transformação.</h2>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; margin-bottom:18px;">Comecei a carreira na interseção entre finanças operacionais e melhoria de processos — a construir capacidade Lean Six Sigma numa das maiores empresas mineiras do mundo e, depois, na estratégia financeira de um grande distribuidor de energia, onde liderei a otimização de custos e a implementação do Balanced Scorecard em várias unidades de negócio.</p>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; margin-bottom:18px;">O ponto de viragem chegou quando entrei em ambientes SSC/GBS multinacionais e percebi que a lacuna na maioria das funções financeiras não era falta de talento — era um problema estrutural. As equipas de finanças passavam 60–80% do tempo a recolher e reconciliar dados, e talvez 20% na análise que realmente suporta decisões. Resolver isso exigia integrar três coisas que a maioria das organizações mantém separadas: rigor financeiro, disciplina de processos e execução técnica.</p>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; margin-bottom:18px;">Essa integração é o que tenho construído ao longo dos últimos 12+ anos — em ambientes SSC/GBS internacionais na Irlanda, em Portugal e no Brasil e, atualmente, numa multinacional europeia do setor automóvel presente no ranking Fortune, onde lidero a transformação SAP S/4HANA e a automação inteligente em mais de 15 entidades jurídicas europeias.</p>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; margin-bottom:32px;">Os programas de formação que dou aqui não são resumos do que li. São a destilação do que construí e do que vi funcionar — e falhar — em ambientes reais, com restrições reais e consequências reais.</p>
+<h3 style="font-family:var(--font-display); font-size:1.2rem; font-weight:600; font-style:italic; color:var(--text); margin-bottom:20px;">Resultados selecionados</h3>
+<div class="metrics-highlight">
+<div class="metric-card reveal left">
+<div class="metric-card-val">200K+</div>
+<div class="metric-card-label">Comunicações transfronteiriças automatizadas — em conformidade com o RGPD, sem perturbações</div>
+</div>
+<div class="metric-card reveal">
+<div class="metric-card-val teal">8→6</div>
+<div class="metric-card-label">Fecho mensal reduzido de 8 para 6 dias através do redesenho do processo R2R</div>
+</div>
+<div class="metric-card reveal right">
+<div class="metric-card-val">30+</div>
+<div class="metric-card-label">Estrangulamentos de processo eliminados com Lean Six Sigma ao longo do ciclo R2R</div>
+</div>
+<div class="metric-card reveal left">
+<div class="metric-card-val teal">15+</div>
+<div class="metric-card-label">Dashboards Power BI construídos, ao serviço de mais de 70 líderes seniores na Europa</div>
+</div>
+<div class="metric-card reveal">
+<div class="metric-card-val">20+</div>
+<div class="metric-card-label">Soluções de automação com RPA, VBA, Power Automate e Python</div>
+</div>
+<div class="metric-card reveal right">
+<div class="metric-card-val teal">–40%</div>
+<div class="metric-card-label">Redução do tempo de ciclo de reporte num dos principais SSC europeus do setor automóvel</div>
+</div>
+</div>
+</div>
+<!-- Sidebar -->
+<div style="position:sticky; top:96px;">
+<div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; margin-bottom:20px;">
+<div style="background:linear-gradient(135deg,var(--navy),var(--navy-700)); padding:20px 24px;">
+<div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); margin-bottom:10px;">Credenciais principais</div>
+</div>
+<div style="padding:20px 24px; display:flex; flex-direction:column; gap:12px;">
+<div style="display:flex; align-items:flex-start; gap:12px; padding-bottom:12px; border-bottom:1px solid var(--border);">
+<span style="font-size:1rem; flex-shrink:0;">⚙️</span>
+<div>
+<div style="font-size:0.84rem; font-weight:700; color:var(--text); margin-bottom:2px;">Lean Six Sigma Green Belt</div>
+<div style="font-size:0.78rem; color:var(--text-3);">Certificado · aplicado em ambientes industriais e financeiros globais</div>
+</div>
+</div>
+<div style="display:flex; align-items:flex-start; gap:12px; padding-bottom:12px; border-bottom:1px solid var(--border);">
+<span style="font-size:1rem; flex-shrink:0;">🔷</span>
+<div>
+<div style="font-size:0.84rem; font-weight:700; color:var(--text); margin-bottom:2px;">SAP S/4HANA Finance</div>
+<div style="font-size:0.78rem; color:var(--text-3);">Implementação · UAT · otimização pós-arranque</div>
+</div>
+</div>
+<div style="display:flex; align-items:flex-start; gap:12px; padding-bottom:12px; border-bottom:1px solid var(--border);">
+<span style="font-size:1rem; flex-shrink:0;">📊</span>
+<div>
+<div style="font-size:0.84rem; font-weight:700; color:var(--text); margin-bottom:2px;">Power BI · DAX avançado</div>
+<div style="font-size:0.78rem; color:var(--text-3);">Mais de 15 dashboards executivos construídos e mantidos</div>
+</div>
+</div>
+<div style="display:flex; align-items:flex-start; gap:12px; padding-bottom:12px; border-bottom:1px solid var(--border);">
+<span style="font-size:1rem; flex-shrink:0;">🤖</span>
+<div>
+<div style="font-size:0.84rem; font-weight:700; color:var(--text); margin-bottom:2px;">Automação Inteligente</div>
+<div style="font-size:0.78rem; color:var(--text-3);">RPA · Blue Prism · Automation Anywhere · Power Platform · VBA · Python</div>
+</div>
+</div>
+<div style="display:flex; align-items:flex-start; gap:12px;">
+<span style="font-size:1rem; flex-shrink:0;">📋</span>
+<div>
+<div style="font-size:0.84rem; font-weight:700; color:var(--text); margin-bottom:2px;">Finanças e Compliance</div>
+<div style="font-size:0.78rem; color:var(--text-3);">IFRS · SOX · RGPD · Ambientes prontos para auditoria</div>
+</div>
+</div>
+</div>
+</div>
+<div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:20px 24px;">
+<div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:14px;">Línguas</div>
+<div style="display:flex; flex-direction:column; gap:8px; font-size:0.87rem;">
+<div style="display:flex; justify-content:space-between; color:var(--text-2);"><span>Português</span><span style="color: var(--teal-ink); font-weight:600;">Nativo</span></div>
+<div style="display:flex; justify-content:space-between; color:var(--text-2);"><span>Inglês</span><span style="color: var(--teal-ink); font-weight:600;">Fluente</span></div>
+<div style="display:flex; justify-content:space-between; color:var(--text-2);"><span>Espanhol</span><span style="color:var(--text-3); font-weight:500;">Intermédio</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ── EXPERTISE AREAS ── -->
+<section class="section section-alt">
+<div class="container">
+<div class="section-label">Áreas de competência</div>
+<h2 class="section-title">Seis disciplinas. Uma prática integrada.</h2>
+<p class="section-subtitle">Não são percursos separados — são a disciplina integrada que gera transformação financeira de ponta a ponta.</p>
+<div class="expertise-grid">
+<div class="exp-card reveal left">
+<div class="exp-card-top"><span class="exp-icon">📊</span><h3>Finance Transformation</h3></div>
+<ul>
+<li>Avaliação da maturidade da função financeira</li>
+<li>Redesenho dos processos R2R, P2P e OTC</li>
+<li>Aceleração do fecho mensal</li>
+<li>Arquitetura de orçamentação e previsão</li>
+<li>Contas de gestão e frameworks de KPIs</li>
+<li>Operações de compliance IFRS e SOX</li>
+</ul>
+</div>
+<div class="exp-card reveal">
+<div class="exp-card-top"><span class="exp-icon">🔷</span><h3>SAP S/4HANA Finance</h3></div>
+<ul>
+<li>Ciclo de implementação e liderança de UAT</li>
+<li>Otimização pós-arranque em mais de 15 entidades</li>
+<li>Reporte financeiro SAP FI/CO</li>
+<li>Automação R2R em S/4HANA</li>
+<li>Padrões de integração SAP + Power BI</li>
+<li>Configuração e governação multientidade</li>
+</ul>
+</div>
+<div class="exp-card reveal right">
+<div class="exp-card-top"><span class="exp-icon">🤖</span><h3>Automação Inteligente</h3></div>
+<ul>
+<li>Desenho e implementação de RPA (Blue Prism, AA)</li>
+<li>Fluxos financeiros em Power Automate</li>
+<li>Automação VBA para operações financeiras</li>
+<li>Scripts Python para dados e reporte</li>
+<li>Microsoft Copilot e entrega potenciada por IA</li>
+<li>ROI da automação e construção do business case</li>
+</ul>
+</div>
+<div class="exp-card reveal left">
+<div class="exp-card-top"><span class="exp-icon">📈</span><h3>Analytics Avançado</h3></div>
+<ul>
+<li>Arquitetura de dashboards Power BI e DAX</li>
+<li>Visualização de KPIs para a gestão de topo</li>
+<li>Dashboards de fecho financeiro e operacionais</li>
+<li>Extração e transformação de dados SAP</li>
+<li>Modelação de cenários e análise de desvios</li>
+<li>Implementação de analytics self-service</li>
+</ul>
+</div>
+<div class="exp-card reveal">
+<div class="exp-card-top"><span class="exp-icon">⚙️</span><h3>Lean Six Sigma</h3></div>
+<ul>
+<li>Certificação Green Belt e metodologia DMAIC</li>
+<li>Gestão de projetos DMAIC de ponta a ponta</li>
+<li>Value Stream Mapping em finanças e operações</li>
+<li>Facilitação de 5S e Kaizen</li>
+<li>Controlo estatístico de processos (SPC)</li>
+<li>Eliminação de desperdício em ambientes de back-office</li>
+</ul>
+</div>
+<div class="exp-card reveal right">
+<div class="exp-card-top"><span class="exp-icon">🏢</span><h3>Operações SSC / GBS</h3></div>
+<ul>
+<li>Desenho e otimização de Centros de Serviços Partilhados</li>
+<li>Operações multipaís (mais de 8 países)</li>
+<li>Frameworks de governação para serviços partilhados</li>
+<li>Liderança de equipas multifuncionais</li>
+<li>Gestão de stakeholders com a administração</li>
+<li>Programas transfronteiriços em conformidade com o RGPD</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- ── CAREER TIMELINE ── -->
+<section class="section">
+<div class="container">
+<div style="max-width: 760px;">
+<div class="section-label">Percurso profissional</div>
+<h2 class="section-title">Onde a experiência foi construída.</h2>
+<p class="section-subtitle" style="margin-bottom:40px;">Os programas que ensino aqui têm origem em todos estes contextos — cada um contribuiu com algo diferente para a disciplina integrada que hoje entrego.</p>
+<div class="timeline">
+<div class="timeline-item reveal">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2022 → Atual</div>
+<div class="timeline-org">Multinacional europeia do setor automóvel (ranking Fortune) · Porto, Portugal</div>
+<h3>Finance Transformation Manager — SSC/GBS europeu</h3>
+<p>Lidero a Transformação Financeira com SAP S/4HANA e a Automação Inteligente num dos ambientes SSC/GBS multinacionais mais complexos da Europa. Responsável por mais de 15 entidades jurídicas em mais de 8 países. Principais resultados: mais de 20 soluções de automação, mais de €200K em poupanças, ~9 FTE de contributo em eficiência, implementação de Power BI para mais de 70 líderes seniores e fecho mensal reduzido de 8 para 6 dias.</p>
+<div class="timeline-tags">
+<span class="timeline-tag">SAP S/4HANA</span>
+<span class="timeline-tag">Power BI · DAX</span>
+<span class="timeline-tag">RPA · Power Platform</span>
+<span class="timeline-tag">R2R · P2P · OTC</span>
+<span class="timeline-tag">IFRS · SOX</span>
+</div>
+</div>
+<div class="timeline-item reveal">
+<div class="timeline-dot teal"></div>
+<div class="timeline-date">2020 → 2022</div>
+<div class="timeline-org">Multinacional europeia do setor automóvel · Porto, Portugal</div>
+<h3>Senior Finance Digital Specialist</h3>
+<p>Liderança da implementação de SAP Finance, arquitetura de automação e desenvolvimento de analytics avançado nas operações de serviços partilhados de um grande grupo automóvel europeu. Construí a infraestrutura de automação e dashboards que deu origem ao programa de transformação.</p>
+<div class="timeline-tags">
+<span class="timeline-tag">SAP Finance</span>
+<span class="timeline-tag">Desenho de Automação</span>
+<span class="timeline-tag">Power BI</span>
+<span class="timeline-tag">VBA · Python</span>
+</div>
+</div>
+<div class="timeline-item reveal">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2019 → 2020</div>
+<div class="timeline-org">Empresa internacional de serviços financeiros · Irlanda / Europa</div>
+<h3>Senior Finance Operations Specialist</h3>
+<p>Operações financeiras e compliance de IVA em mais de 30 jurisdições europeias. Construí frameworks de validação automatizada e processos de melhoria contínua para operações fiscais multinacionais de grande volume e elevada complexidade.</p>
+<div class="timeline-tags">
+<span class="timeline-tag">Compliance de IVA · mais de 30 jurisdições</span>
+<span class="timeline-tag">Automação de Processos</span>
+<span class="timeline-tag">Lean Six Sigma</span>
+</div>
+</div>
+<div class="timeline-item reveal">
+<div class="timeline-dot teal"></div>
+<div class="timeline-date">2016 → 2019</div>
+<div class="timeline-org">Programa de recuperação ambiental de grande escala · Brasil</div>
+<h3>Finance Controller — Programas Sociais</h3>
+<p>Governação financeira, controlos de procurement em SAP e reporte automatizado para programas sociais complexos, sob forte escrutínio público e com recursos limitados. Assegurei total transparência para auditoria em todos os programas.</p>
+<div class="timeline-tags">
+<span class="timeline-tag">Procurement SAP</span>
+<span class="timeline-tag">Controlo Orçamental</span>
+<span class="timeline-tag">Governação</span>
+</div>
+</div>
+<div class="timeline-item reveal">
+<div class="timeline-dot"></div>
+<div class="timeline-date">2012 → 2016</div>
+<div class="timeline-org">Grande distribuidora de energia brasileira · Brasil</div>
+<h3>Analista de Planeamento Financeiro e Estratégia</h3>
+<p>Estratégia de custos, implementação do Balanced Scorecard e modelação financeira em várias unidades de negócio, num mercado de energia muito competitivo onde a gestão de margens é existencial. Liderei iniciativas de redução de custos e desenvolvi capacidade de modelação de cenários para as decisões da liderança.</p>
+<div class="timeline-tags">
+<span class="timeline-tag">Balanced Scorecard</span>
+<span class="timeline-tag">Estratégia de Custos</span>
+<span class="timeline-tag">Modelação Financeira</span>
+</div>
+</div>
+<div class="timeline-item reveal">
+<div class="timeline-dot teal"></div>
+<div class="timeline-date">2010 → 2012</div>
+<div class="timeline-org">Uma das maiores empresas mineiras do mundo · Brasil</div>
+<h3>Analista Lean Six Sigma — Operações Industriais</h3>
+<p>Implementação de melhoria contínua em extração, manutenção, logística e administração numa das maiores empresas mineiras do mundo. Apliquei Kaizen, DMAIC, 5S e controlo estatístico de processos em ambientes industriais reais — obtendo a certificação Lean Six Sigma Green Belt.</p>
+<div class="timeline-tags">
+<span class="timeline-tag">Lean Six Sigma GB</span>
+<span class="timeline-tag">DMAIC</span>
+<span class="timeline-tag">Kaizen · VSM · 5S</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ── CTA ── -->
+<section class="cta-strip">
+<div class="container">
+<div class="cta-strip-inner">
+<div class="cta-strip-text">
+<h2>Aprenda com quem ainda faz o trabalho.</h2>
+<p>Veja os programas de formação ou fale connosco sobre o que precisa — individualmente ou para a sua equipa.</p>
+</div>
+<div class="cta-strip-actions">
+<a class="btn btn-white btn-lg" href="courses.html">Ver formações</a>
+<a class="btn btn-ghost-white btn-lg" href="contact.html">Falar connosco</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">MBS Academy</div>
+<p>Formação executiva em Finance Transformation, Excelência de Processos, SAP e Automação Inteligente.</p>
+<div class="footer-social">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">in</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">▶</a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<h2>Plataforma</h2>
+<a href="about.html">Sobre</a>
+<a href="courses.html">Formação</a>
+<a href="case-studies.html">Casos de Estudo</a>
+<a href="contact.html">Contacto</a>
+</div>
+<div class="footer-col">
+<h2>Formação</h2>
+<a href="../courses/finance-transformation.html">Finance Transformation</a>
+<a href="../courses/lean-six-sigma.html">Lean Six Sigma</a>
+<a href="../courses/intelligent-automation.html">Automação Inteligente</a>
+<a href="../courses/sap-finance.html">SAP Finance Ops</a>
+</div>
+<div class="footer-col">
+<h2>Contactos</h2>
+<a href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">YouTube</a>
+<a href="contact.html">Pedido de formação</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Marlon B Siqueira · MBS Academy. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+<script defer="" src="../../javascript/main.js"></script>
+</body>
+</html>

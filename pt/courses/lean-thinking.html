@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<script>document.documentElement.classList.add("js")</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Lean Thinking — os princípios e a mentalidade por trás do Lean aplicados a finanças, operações e serviços para eliminar de vez o desperdício sistémico." name="description"/>
+<title>Lean Thinking | MBS Academy</title>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/lean-thinking.html" rel="canonical"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/courses/lean-thinking.html" hreflang="en" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/lean-thinking.html" hreflang="pt" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/courses/lean-thinking.html" hreflang="x-default" rel="alternate"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0B1629" name="theme-color"/>
+<meta content="Lean Thinking | MBS Academy" property="og:title"/>
+<meta content="Lean Thinking — os princípios e a mentalidade por trás do Lean aplicados a finanças, operações e serviços para eliminar de vez o desperdício sistémico." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/pt/courses/lean-thinking.html" property="og:url"/>
+<meta content="MBS Academy" property="og:site_name"/>
+<meta content="pt_PT" property="og:locale"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Plus+Jakarta+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/main.css" rel="stylesheet"/>
+<style>
+    .course-detail-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; padding: 64px 0; }
+    .course-sticky-card { position: sticky; top: 96px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+    .sticky-card-header { background: linear-gradient(135deg, #022c1c, #10B981); padding: 28px; text-align: center; }
+    .sticky-card-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .sticky-card-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; font-style: italic; color: #fff; }
+    .sticky-card-body { padding: 24px; }
+    .sticky-meta { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .sticky-meta-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .sticky-meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .sticky-meta-label { font-size: 0.8rem; color: var(--text-3); }
+    .sticky-meta-value { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+
+    .objectives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .objective-item { display: flex; align-items: flex-start; gap: 10px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px; }
+    .objective-check { color: var(--teal-ink); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+    .objective-item p { font-size: 0.87rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+
+    .module-accordion { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+    .module-item-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+    .module-header { display: flex; align-items: center; gap: 16px; padding: 18px 20px; cursor: pointer; user-select: none; }
+    .module-num { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--teal-ink); width: 28px; flex-shrink: 0; }
+    .module-title-text { font-weight: 600; font-size: 0.95rem; color: var(--text); flex: 1; }
+    .module-duration { font-size: 0.8rem; color: var(--text-3); flex-shrink: 0; }
+    .module-body { padding: 0 20px 18px 64px; display: none; }
+    .module-item-block.open .module-body { display: block; }
+    .module-lessons { display: flex; flex-direction: column; gap: 6px; }
+    .module-lesson { display: flex; align-items: center; gap: 10px; font-size: 0.86rem; color: var(--text-2); padding: 6px 0; }
+    .lesson-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-md); flex-shrink: 0; }
+
+    .audience-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .audience-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--bg-alt); border-radius: var(--r-sm); font-size: 0.9rem; color: var(--text-2); }
+    .audience-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    .lean-principles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 24px 0; }
+    .lean-principle { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 16px 12px; text-align: center; }
+    .lean-principle-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; font-style: italic; color: var(--teal-ink); line-height: 1; margin-bottom: 6px; }
+    .lean-principle-name { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .lean-principle-desc { font-size: 0.7rem; color: var(--text-3); line-height: 1.5; }
+
+    @media (max-width: 960px) { .course-detail-layout { grid-template-columns: 1fr; } .course-sticky-card { position: static; } .objectives-grid { grid-template-columns: 1fr; } .lean-principles { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px) { .lean-principles { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+<header class="site-header" id="site-header">
+<nav class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="brand-initials">MBS</span>
+<span class="brand-name">Academy</span>
+</a>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="../index.html">Início</a></li>
+<li><a class="nav-link" href="../pages/about.html">Sobre</a></li>
+<li><a class="nav-link active" href="../pages/courses.html">Formação</a></li>
+<li><a class="nav-link" href="../pages/case-studies.html">Casos de Estudo</a></li>
+<li><a class="nav-link" href="../pages/contact.html">Contacto</a></li>
+</ul>
+<div aria-label="Língua" class="lang-switch" role="group"><a data-lang-link="en" href="../../courses/lean-thinking.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang-link="pt" href="lean-thinking.html" hreflang="pt" lang="pt">PT</a></div>
+<a class="btn btn-primary nav-cta" href="../pages/contact.html">Falar connosco</a>
+<button aria-label="Abrir/fechar navegação" class="mobile-toggle" id="mobile-toggle">
+<span></span><span></span><span></span>
+</button>
+</nav>
+</header>
+<main>
+<section class="page-hero">
+<div class="container">
+<div class="page-hero-inner">
+<span class="eyebrow">Lean Thinking · Eliminação de Desperdício · Value Stream · Melhoria Contínua</span>
+<h1>Lean Thinking</h1>
+<p>As ferramentas e os frameworks levam as pessoas 20% do caminho. Os outros 80% são mentalidade — a capacidade de ver o desperdício, questionar pressupostos e perseguir incansavelmente o fluxo. Este programa constrói essa base: os cinco princípios Lean aplicados em profundidade, com tradução direta para finanças, serviços partilhados e back-office, onde o desperdício é invisível, o valor é difícil de definir e a maioria das iniciativas de melhoria estagna ao fim de seis meses.</p>
+<div class="hero-actions">
+<a class="btn btn-white btn-lg" href="../pages/contact.html">Inscrever ou saber mais</a>
+<a class="btn btn-ghost-white btn-lg" href="#modules">Ver módulos</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="course-detail-layout">
+<!-- Main content -->
+<div>
+<div class="section-label">Visão geral do programa</div>
+<h2 class="section-title">O que este programa cobre.</h2>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:20px;">O Lean Thinking é a base intelectual por trás de todas as ferramentas Lean — 5S, Kaizen, Value Stream Mapping, DMAIC. Sem ele, essas ferramentas são apenas atividades. Com ele, tornam-se um sistema. Este programa ensina os cinco princípios do Lean Thinking definidos por Womack e Jones e vai além da teoria para mostrar como se manifestam — e falham — em finanças e serviços que nada têm a ver com a fábrica da Toyota onde nasceram.</p>
+<p style="font-size:1rem; color:var(--text-2); line-height:1.88; max-width:680px; margin-bottom:32px;">Isto não é uma história da Toyota. É um framework prático para construir uma mentalidade Lean que torna muito mais eficaz cada ferramenta que já conhece — ou que vai aprender. Ideal como curso de base autónomo ou como preparação para facilitação de Kaizen, Six Sigma ou projetos de redesenho de processos.</p>
+<div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:14px;">Os cinco princípios Lean</div>
+<div class="lean-principles">
+<div class="lean-principle">
+<div class="lean-principle-num">1</div>
+<div class="lean-principle-name">Valor</div>
+<div class="lean-principle-desc">Definir o que o cliente realmente valoriza — não o que presumimos.</div>
+</div>
+<div class="lean-principle">
+<div class="lean-principle-num">2</div>
+<div class="lean-principle-name">Value Stream</div>
+<div class="lean-principle-desc">Mapear todo o fluxo de atividades. Expor cada passo que não acrescenta valor.</div>
+</div>
+<div class="lean-principle">
+<div class="lean-principle-num">3</div>
+<div class="lean-principle-name">Fluxo</div>
+<div class="lean-principle-desc">Fazer os passos que acrescentam valor fluir sem interrupções, defeitos ou lotes.</div>
+</div>
+<div class="lean-principle">
+<div class="lean-principle-num">4</div>
+<div class="lean-principle-name">Pull</div>
+<div class="lean-principle-desc">Produzir apenas o que o passo seguinte precisa, quando precisa.</div>
+</div>
+<div class="lean-principle">
+<div class="lean-principle-num">5</div>
+<div class="lean-principle-name">Perfeição</div>
+<div class="lean-principle-desc">Perseguir incansavelmente a melhoria contínua — não há linha de chegada.</div>
+</div>
+</div>
+<h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">Para quem é</h3>
+<div class="audience-list">
+<div class="audience-item"><span class="audience-icon">🧠</span> Profissionais de finanças e operações que querem perceber o Lean de forma sistémica, não só ao nível das ferramentas</div>
+<div class="audience-item"><span class="audience-icon">📊</span> Controllers e donos de processos a preparar-se para liderar iniciativas de melhoria nas suas equipas</div>
+<div class="audience-item"><span class="audience-icon">⚙️</span> Praticantes de Lean Six Sigma que querem reforçar a base teórica e aprofundar a prática</div>
+<div class="audience-item"><span class="audience-icon">🏢</span> Gestores de SSC/GBS a desenhar programas de normalização e melhoria contínua</div>
+<div class="audience-item"><span class="audience-icon">🎓</span> Quem já fez formação em 5S ou Kaizen e quer perceber o «porquê» por trás das ferramentas</div>
+</div>
+<h3 id="objectives" style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">O que vai conseguir fazer</h3>
+<div class="objectives-grid">
+<div class="objective-item"><span class="objective-check">✓</span><p>Definir o valor na perspetiva do cliente em qualquer processo financeiro ou de serviço</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Identificar e classificar os oito tipos de desperdício em escritórios e serviços</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Mapear um value stream para expor passos sem valor, atrasos e falhas nas passagens de trabalho</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Aplicar os princípios de fluxo e pull para redesenhar processos que hoje trabalham em lotes, filas e esperas</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Construir uma cultura de melhoria contínua — não apenas conduzir projetos de melhoria</p></div>
+<div class="objective-item"><span class="objective-check">✓</span><p>Diagnosticar porque falham as iniciativas Lean e desenhar intervenções que perduram para além da primeira fase</p></div>
+</div>
+<h3 id="modules" style="font-family:var(--font-display); font-size:1.25rem; font-weight:600; font-style:italic; color:var(--text); margin:32px 0 16px;">Módulos do programa</h3>
+<div class="module-accordion">
+<div class="module-item-block open">
+<div class="module-header">
+<span class="module-num">01</span>
+<span class="module-title-text">As Origens do Lean e Porque é Mal Compreendido nos Serviços</span>
+<span class="module-duration">~75 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Do Toyota Production System ao Lean Thinking: a linhagem intelectual</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Porque falha o Lean nos serviços: os três erros de tradução que a maioria das organizações comete</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Lean vs. Six Sigma vs. Lean Six Sigma: o que cada um traz e quando usar qual</div>
+<div class="module-lesson"><span class="lesson-dot"></span>A mentalidade Lean vs. as ferramentas Lean: porque é que ferramentas sem filosofia não perduram</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Os cinco princípios como sistema — e porque só funcionam em conjunto</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">02</span>
+<span class="module-title-text">Princípio 1 — Valor: o que os Clientes Realmente Querem</span>
+<span class="module-duration">~70 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Definir o valor na perspetiva do cliente — clientes internos e externos</div>
+<div class="module-lesson"><span class="lesson-dot"></span>As três categorias de trabalho: que acrescenta valor, necessário sem valor e puro desperdício</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Porque é que as equipas financeiras otimizam muitas vezes para a conveniência interna em vez do valor para o cliente</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Exercícios de definição de valor para processos financeiros comuns: fecho mensal, contas a pagar, reporte</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Como conduzir um workshop de definição de valor com uma equipa multifuncional</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">03</span>
+<span class="module-title-text">Princípio 2 — Value Stream: Mapear Todo o Fluxo</span>
+<span class="module-duration">~90 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>O Value Stream Map (VSM): objetivo, símbolos e convenções de leitura</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Construir o mapa do estado atual: os 7 passos aplicados a um processo financeiro</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Os 8 tipos de desperdício (TIMWOODS) identificados num value stream: exemplos reais em finanças</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Calcular a eficiência do processo: tempo que acrescenta valor vs. lead time total</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Construir o mapa do estado futuro: desenhar o fluxo melhorado antes de o implementar</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">04</span>
+<span class="module-title-text">Princípios 3 e 4 — Fluxo e Pull: Eliminar Lotes e Filas</span>
+<span class="module-duration">~85 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Fluxo: porque é que os lotes são inimigos da rapidez nos processos financeiros</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Takt time e balanceamento de processos: ajustar a capacidade à procura</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Fluxo peça a peça em finanças: como fica no processamento de faturas, reconciliações e reporte</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Sistemas pull: Kanban e gestão do trabalho por sinais em escritórios</div>
+<div class="module-lesson"><span class="lesson-dot"></span>A transição de push para pull: passos práticos para equipas de finanças e SSC</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Desenhar um sistema de gestão visual que suporta o fluxo e o pull</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">05</span>
+<span class="module-title-text">Princípio 5 — Perfeição: Construir uma Cultura de Melhoria Contínua</span>
+<span class="module-duration">~85 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>O que significa perfeição no Lean: a procura, não o destino</div>
+<div class="module-lesson"><span class="lesson-dot"></span>O ciclo PDCA como motor da melhoria contínua</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Construir um sistema de gestão Lean: reuniões diárias, quadros visuais e rotinas de resolução de problemas</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Leader standard work: o que os gestores têm de fazer de forma diferente para sustentar a cultura Lean</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Porque é que as transformações Lean estagnam aos 6 meses — e as três intervenções que as relançam</div>
+<div class="module-lesson"><span class="lesson-dot"></span>O seu roadmap de 90 dias para implementar o Lean Thinking</div>
+</div>
+</div>
+</div>
+<div class="module-item-block">
+<div class="module-header">
+<span class="module-num">06</span>
+<span class="module-title-text">Lean Thinking Aplicado — Casos de Estudo em Finanças e Back-Office</span>
+<span class="module-duration">~80 min</span>
+</div>
+<div class="module-body">
+<div class="module-lessons">
+<div class="module-lesson"><span class="lesson-dot"></span>Caso de estudo 1: aplicar os cinco princípios a um projeto de aceleração do fecho mensal</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Caso de estudo 2: redesenhar o processo de contas a pagar com value stream mapping e fluxo</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Caso de estudo 3: construir um sistema de reporte pull num SSC/GBS com 15 entidades</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Modos de falha comuns do Lean em finanças — e como desenhar para os evitar</div>
+<div class="module-lesson"><span class="lesson-dot"></span>Como o Lean Thinking se liga ao Kaizen, ao 5S e ao Six Sigma — e os reforça</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-teal" style="margin-top:40px;">
+<div class="callout-label">Construído a partir de mais de 12 anos de aplicação Lean em várias indústrias</div>
+<p>Este programa baseia-se na prática de Lean Six Sigma em operações industriais globais e em transformação financeira de grande escala em SSC/GBS. Os casos de estudo e padrões de falha aqui abordados vêm de implementações reais — incluindo Value Stream Mapping aplicado a ciclos de fecho mensal, desenho de sistemas pull para reporte multinacional e construção de cultura Lean em ambientes onde o desperdício está no processo, não no chão de fábrica.</p>
+</div>
+</div>
+<!-- Sticky sidebar -->
+<div>
+<div class="course-sticky-card">
+<div class="sticky-card-header">
+<div class="sticky-card-icon">🌿</div>
+<div class="sticky-card-title">Lean Thinking</div>
+</div>
+<div class="sticky-card-body">
+<div class="sticky-meta">
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Nível</span>
+<span class="sticky-meta-value">Fundamentos → Intermédio</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Duração</span>
+<span class="sticky-meta-value">~8 horas</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Módulos</span>
+<span class="sticky-meta-value">6 módulos</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Entrega</span>
+<span class="sticky-meta-value">Online · Presencial disponível</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Pré-requisitos</span>
+<span class="sticky-meta-value">Nenhum</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Combina bem com</span>
+<span class="sticky-meta-value">5S · Kaizen · Lean Six Sigma</span>
+</div>
+<div class="sticky-meta-row">
+<span class="sticky-meta-label">Certificado</span>
+<span class="sticky-meta-value">Na conclusão</span>
+</div>
+</div>
+<a class="btn btn-primary sticky-cta btn-lg" href="../pages/contact.html">Inscrever ou saber mais</a>
+<p style="font-size:0.78rem; color:var(--text-3); text-align:center; margin-top:12px;">Formação para equipas disponível — contacte para saber preços</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta-strip">
+<div class="container">
+<div class="cta-strip-inner">
+<div class="cta-strip-text">
+<h2>Pronto para pensar de forma diferente sobre como o trabalho flui?</h2>
+<p>Inscreva-se no Lean Thinking ou explore o catálogo completo de formação — incluindo 5S, Kaizen e Lean Six Sigma.</p>
+</div>
+<div class="cta-strip-actions">
+<a class="btn btn-white btn-lg" href="../pages/contact.html">Falar connosco</a>
+<a class="btn btn-ghost-white btn-lg" href="../pages/courses.html">Ver todos os programas</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">MBS Academy</div>
+<p>Formação executiva em Finance Transformation, Excelência de Processos, SAP e Automação Inteligente.</p>
+<div class="footer-social">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">in</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">▶</a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<h2>Plataforma</h2>
+<a href="../pages/about.html">Sobre</a>
+<a href="../pages/courses.html">Formação</a>
+<a href="../pages/case-studies.html">Casos de Estudo</a>
+<a href="../pages/contact.html">Contacto</a>
+</div>
+<div class="footer-col">
+<h2>Formação</h2>
+<a href="lean-thinking.html">Lean Thinking</a>
+<a href="lean-six-sigma.html">Lean Six Sigma</a>
+<span class="link-soon" title="Em breve">Kaizen</span>
+<a href="5s-methodology.html">Metodologia 5S</a>
+</div>
+<div class="footer-col">
+<h2>Contactos</h2>
+<a href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">YouTube</a>
+<a href="../pages/contact.html">Pedido de formação</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom"><p>© 2026 Marlon B Siqueira · MBS Academy. Todos os direitos reservados.</p></div>
+</div>
+</footer>
+<script defer="" src="../../javascript/main.js"></script>
+</body>
+</html>
