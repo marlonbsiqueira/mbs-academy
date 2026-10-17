@@ -48,7 +48,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 
 .hero-title {
@@ -90,13 +90,13 @@
 }
 .trust-item {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.6);
 }
 .trust-item strong {
   color: rgba(255,255,255,0.85);
   font-weight: 600;
 }
-.trust-sep { color: rgba(255,255,255,0.25); }
+.trust-sep { color: rgba(255,255,255,0.6); }
 
 /* ── Floating cards ───────────────────────────────── */
 .hero-visual { position: relative; }
@@ -133,7 +133,7 @@
 }
 .fc-text span {
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.52);
+  color: rgba(255,255,255,0.6);
 }
 
 .card-1 { animation: float-1 6s ease-in-out infinite; }
