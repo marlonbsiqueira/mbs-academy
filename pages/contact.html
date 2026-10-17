@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>document.documentElement.classList.add("js")</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Marlon B Siqueira Academy — training inquiries, team programs, consulting, and partnerships.">
   <title>Contact | MBS Academy</title>
+  <link rel="canonical" href="https://marlonbsiqueira.github.io/mbs-academy/pages/contact.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0B1629">
+  <meta property="og:title" content="Contact | MBS Academy">
+  <meta property="og:description" content="Contact Marlon B Siqueira Academy — training inquiries, team programs, consulting, and partnerships.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marlonbsiqueira.github.io/mbs-academy/pages/contact.html">
+  <meta property="og:site_name" content="MBS Academy">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/main.css">
   <style>
     .contact-layout {
@@ -150,10 +164,14 @@
           <div>
             <div class="contact-form-card reveal right">
               <h3>Send a message</h3>
-              <form action="https://formsubmit.co/advisorymbs@gmail.com" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="MBS Academy inquiry">
-                <input type="hidden" name="_next" value="https://mbsadvisory.com/pages/contact.html">
+              <form action="https://api.web3forms.com/submit" method="POST" class="js-ajax-form">
+                <!-- Web3Forms public access key (account advisorymbs@gmail.com) — safe to expose -->
+                <input type="hidden" name="access_key" value="5cd5f94a-fbce-43a4-a38f-fbebb897b20d">
+                <input type="hidden" name="subject" value="MBS Academy inquiry">
+                <input type="hidden" name="from_name" value="MBS Academy website">
+                <input type="hidden" name="redirect" value="https://marlonbsiqueira.github.io/mbs-academy/pages/contact.html">
+                <!-- spam trap: real visitors never see or fill this -->
+                <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 
                 <div class="form-row">
                   <div class="form-group">
@@ -191,6 +209,7 @@
 
                 <button type="submit" class="btn btn-primary form-submit btn-lg">Send inquiry</button>
                 <p class="form-note">I typically respond within 1–2 business days. For urgent inquiries, connect via LinkedIn.</p>
+                <p class="form-status" role="status" aria-live="polite" hidden></p>
               </form>
             </div>
           </div>
@@ -241,6 +260,6 @@
     </div>
   </footer>
 
-  <script src="../javascript/main.js"></script>
+  <script defer src="../javascript/main.js"></script>
 </body>
 </html>
