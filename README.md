@@ -8,6 +8,8 @@ pages/                about, courses (catalog), case studies, contact
 courses/              one page per programme
 lessons/              individual lessons
 case-studies/         one page per case study
+pt/                   Portuguese version — GENERATED, do not edit by hand
+tools/build_pt.py     builds pt/ from the English pages + tools/i18n/pt.json
 styles/main.css       shared styles (pages add their own in a <style> block)
 javascript/main.js    menu, scroll reveal, catalog filters, module accordion, contact form
 ```
@@ -32,3 +34,20 @@ matching the buttons' `data-filter` values: `finance`, `process`,
 Copy the `<head>` of a page at the same folder depth (canonical URL,
 favicon and share image are included) and add the page to `sitemap.xml`.
 A GitHub Action checks every push for links to files that don't exist.
+
+## Portuguese version (pt/)
+Every English page has a Portuguese twin under `pt/` with the same path
+(e.g. `pages/about.html` → `pt/pages/about.html`), linked by the **EN | PT**
+switch in the header and by `hreflang` tags for search engines.
+
+The English pages are the source. After changing an English page:
+
+```
+python3 tools/build_pt.py --missing   # lists new/changed English text
+# add each listed string with its Portuguese translation to tools/i18n/pt.json
+python3 tools/build_pt.py             # regenerates pt/
+```
+
+Translations are keyed by the English text of each block (inline tags such
+as `<em>` or `<strong>` included), so the same sentence used on several
+pages is translated once. Requires Python 3 and `beautifulsoup4`.

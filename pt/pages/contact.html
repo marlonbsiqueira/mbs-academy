@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<script>document.documentElement.classList.add("js")</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Contacte a MBS Academy — pedidos de formação, programas para equipas, consultoria e parcerias." name="description"/>
+<title>Contacto | MBS Academy</title>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/pages/contact.html" rel="canonical"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pages/contact.html" hreflang="en" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/pages/contact.html" hreflang="pt" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pages/contact.html" hreflang="x-default" rel="alternate"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0B1629" name="theme-color"/>
+<meta content="Contacto | MBS Academy" property="og:title"/>
+<meta content="Contacte a MBS Academy — pedidos de formação, programas para equipas, consultoria e parcerias." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/pt/pages/contact.html" property="og:url"/>
+<meta content="MBS Academy" property="og:site_name"/>
+<meta content="pt_PT" property="og:locale"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Plus+Jakarta+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/main.css" rel="stylesheet"/>
+<style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: start;
+      padding: 64px 0;
+    }
+    .contact-info h2 { font-family: var(--font-display); font-size: clamp(1.8rem,2.5vw,2.4rem); font-weight:600; font-style:italic; color:var(--text); letter-spacing:-0.02em; margin-bottom:16px; }
+    .contact-info p { font-size:1rem; color:var(--text-2); line-height:1.85; margin-bottom:24px; }
+    .contact-options { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+    .contact-option { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); }
+    .contact-option-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+    .contact-option h3 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .contact-option p { font-size: 0.85rem; color: var(--text-2); margin: 0; line-height: 1.6; }
+    .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact-link { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: var(--surface); border: 1.5px solid var(--border-md); border-radius: 999px; font-size: 0.85rem; font-weight: 600; color: var(--text); transition: border-color 0.2s, color 0.2s; }
+    .contact-link:hover { border-color: var(--blue); color: var(--blue); }
+
+    .contact-form-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 40px; box-shadow: var(--shadow-md); }
+    .contact-form-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; font-style: italic; color: var(--text); margin-bottom: 24px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3); }
+    .form-input, .form-textarea, .form-select {
+      width: 100%; padding: 13px 16px;
+      border: 1.5px solid var(--border-md);
+      border-radius: var(--r-sm);
+      background: var(--bg-alt);
+      color: var(--text);
+      font-family: var(--font-body); font-size: 0.92rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      appearance: none;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none; border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(27,59,255,0.1);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-3); }
+    .form-textarea { min-height: 130px; resize: vertical; }
+    .form-select { cursor: pointer; }
+    .form-submit { width: 100%; justify-content: center; display: flex; margin-top: 8px; }
+    .form-note { font-size: 0.78rem; color: var(--text-3); text-align: center; margin-top: 12px; line-height: 1.5; }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" id="site-header">
+<nav class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="brand-initials">MBS</span>
+<span class="brand-name">Academy</span>
+</a>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="../index.html">Início</a></li>
+<li><a class="nav-link" href="about.html">Sobre</a></li>
+<li><a class="nav-link" href="courses.html">Formação</a></li>
+<li><a class="nav-link" href="case-studies.html">Casos de Estudo</a></li>
+<li><a class="nav-link active" href="contact.html">Contacto</a></li>
+</ul>
+<div aria-label="Língua" class="lang-switch" role="group"><a data-lang-link="en" href="../../pages/contact.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang-link="pt" href="contact.html" hreflang="pt" lang="pt">PT</a></div>
+<a class="btn btn-primary nav-cta" href="courses.html">Ver formações</a>
+<button aria-label="Abrir/fechar navegação" class="mobile-toggle" id="mobile-toggle">
+<span></span><span></span><span></span>
+</button>
+</nav>
+</header>
+<main>
+<section class="page-hero">
+<div class="container">
+<div class="page-hero-inner">
+<span class="eyebrow">Contacto</span>
+<h1>Vamos falar sobre o que precisa.</h1>
+<p>Seja formação individual, um programa para a sua equipa, um projeto de consultoria ou um convite para uma palestra — entre em contacto e vamos encontrar a melhor forma de trabalhar em conjunto.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="contact-layout">
+<div class="contact-info">
+<div class="section-label">Como posso ajudar</div>
+<h2>Formação individual, programas para equipas e consultoria.</h2>
+<p>Trabalho com profissionais que querem progredir na carreira, equipas de liderança que querem desenvolver as suas funções de finanças ou operações e organizações em transformação que precisam de apoio prático.</p>
+<div class="contact-options">
+<div class="contact-option">
+<span class="contact-option-icon">🎓</span>
+<div>
+<h3>Inscrição em formação individual</h3>
+<p>Acesso a um ou mais programas de formação. Fale connosco para saber preços e disponibilidade.</p>
+</div>
+</div>
+<div class="contact-option">
+<span class="contact-option-icon">🏢</span>
+<div>
+<h3>Programas para equipas e empresas</h3>
+<p>Formação à medida para equipas de finanças, operações ou transformação — presencial ou à distância, adaptada ao seu contexto e às suas ferramentas.</p>
+</div>
+</div>
+<div class="contact-option">
+<span class="contact-option-icon">⚙️</span>
+<div>
+<h3>Consultoria e aconselhamento</h3>
+<p>Apoio prático em iniciativas de transformação financeira, melhoria de processos ou automação — do diagnóstico à entrega.</p>
+</div>
+</div>
+<div class="contact-option">
+<span class="contact-option-icon">🎤</span>
+<div>
+<h3>Palestras e eventos</h3>
+<p>Disponível para keynotes, workshops e painéis sobre transformação financeira, automação e excelência operacional.</p>
+</div>
+</div>
+</div>
+<div class="contact-links">
+<a class="contact-link" href="mailto:advisorymbs@gmail.com"><span>✉</span> advisorymbs@gmail.com</a>
+<a class="contact-link" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank"><span>in</span> LinkedIn</a>
+<a class="contact-link" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank"><span>▶</span> YouTube</a>
+</div>
+</div>
+<div>
+<div class="contact-form-card reveal right">
+<h3>Enviar uma mensagem</h3>
+<form action="https://api.web3forms.com/submit" class="js-ajax-form" method="POST">
+<!-- Web3Forms public access key (account advisorymbs@gmail.com) — safe to expose -->
+<input name="access_key" type="hidden" value="5cd5f94a-fbce-43a4-a38f-fbebb897b20d"/>
+<input name="subject" type="hidden" value="MBS Academy inquiry"/>
+<input name="from_name" type="hidden" value="MBS Academy website"/>
+<input name="redirect" type="hidden" value="https://marlonbsiqueira.github.io/mbs-academy/pages/contact.html"/>
+<!-- spam trap: real visitors never see or fill this -->
+<input aria-hidden="true" name="botcheck" style="position:absolute;left:-9999px" tabindex="-1" type="checkbox"/>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label" for="name">Nome completo</label>
+<input class="form-input" id="name" name="name" placeholder="O seu nome" required="" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="email">Endereço de e-mail</label>
+<input class="form-input" id="email" name="email" placeholder="o.seu@email.com" required="" type="email"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label" for="company">Organização (opcional)</label>
+<input class="form-input" id="company" name="company" placeholder="Empresa ou instituição" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="inquiry-type">Tipo de pedido</label>
+<select class="form-select" id="inquiry-type" name="inquiry_type">
+<option value="">Selecionar tipo</option>
+<option value="individual">Inscrição em formação individual</option>
+<option value="team">Programa para equipa ou empresa</option>
+<option value="consulting">Consultoria / aconselhamento</option>
+<option value="speaking">Palestra ou evento</option>
+<option value="other">Outro</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label" for="message">A sua mensagem</label>
+<textarea class="form-textarea" id="message" name="message" placeholder="Conte-me o que procura — a sua função, o seu desafio, a sua equipa ou o seu projeto. Quanto mais contexto partilhar, melhor posso responder." required=""></textarea>
+</div>
+<button class="btn btn-primary form-submit btn-lg" type="submit">Enviar pedido</button>
+<p class="form-note">Normalmente respondo em 1–2 dias úteis. Para pedidos urgentes, contacte-me pelo LinkedIn.</p>
+<p aria-live="polite" class="form-status" hidden="" role="status"></p>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">MBS Academy</div>
+<p>Formação executiva em Finance Transformation, Excelência de Processos, SAP e Automação Inteligente.</p>
+<div class="footer-social">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">in</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">▶</a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<h2>Plataforma</h2>
+<a href="about.html">Sobre</a>
+<a href="courses.html">Formação</a>
+<a href="case-studies.html">Casos de Estudo</a>
+<a href="contact.html">Contacto</a>
+</div>
+<div class="footer-col">
+<h2>Formação</h2>
+<a href="../courses/finance-transformation.html">Finance Transformation</a>
+<a href="../courses/lean-six-sigma.html">Lean Six Sigma</a>
+<a href="../courses/intelligent-automation.html">Automação Inteligente</a>
+<a href="../courses/sap-finance.html">SAP Finance Ops</a>
+</div>
+<div class="footer-col">
+<h2>Contactos</h2>
+<a href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">YouTube</a>
+<a href="contact.html">Pedido de formação</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Marlon B Siqueira · MBS Academy. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+<script defer="" src="../../javascript/main.js"></script>
+</body>
+</html>

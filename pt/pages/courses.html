@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<script>document.documentElement.classList.add("js")</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Catálogo de formação — cursos de Finance Transformation, Lean Six Sigma, Automação Inteligente e SAP Finance por Marlon B Siqueira." name="description"/>
+<title>Catálogo de Formação | MBS Academy</title>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/pages/courses.html" rel="canonical"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pages/courses.html" hreflang="en" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pt/pages/courses.html" hreflang="pt" rel="alternate"/>
+<link href="https://marlonbsiqueira.github.io/mbs-academy/pages/courses.html" hreflang="x-default" rel="alternate"/>
+<link href="../../favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0B1629" name="theme-color"/>
+<meta content="Catálogo de Formação | MBS Academy" property="og:title"/>
+<meta content="Catálogo de formação — cursos de Finance Transformation, Lean Six Sigma, Automação Inteligente e SAP Finance por Marlon B Siqueira." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/pt/pages/courses.html" property="og:url"/>
+<meta content="MBS Academy" property="og:site_name"/>
+<meta content="pt_PT" property="og:locale"/>
+<meta content="https://marlonbsiqueira.github.io/mbs-academy/images/og-cover.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Plus+Jakarta+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles/main.css" rel="stylesheet"/>
+<style>
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .catalog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .catalog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .catalog-card-top {
+      padding: 28px 28px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .catalog-card-icon { font-size: 2rem; margin-bottom: 14px; }
+    .catalog-card-top h2 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; font-style: italic; color: var(--text); margin-bottom: 10px; letter-spacing: -0.01em; }
+    .catalog-card-top p { font-size: 0.9rem; color: var(--text-2); line-height: 1.75; }
+    .catalog-card-meta {
+      padding: 16px 28px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+    .meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .meta-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+    .meta-value { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+    .catalog-card-modules { padding: 16px 28px 20px; flex: 1; }
+    .catalog-card-modules h3 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 10px; }
+    .module-list { display: flex; flex-direction: column; gap: 5px; }
+    .module-item { font-size: 0.85rem; color: var(--text-2); display: flex; align-items: center; gap: 8px; }
+    .module-item::before { content: '—'; color: var(--teal-ink); font-size: 0.7rem; flex-shrink: 0; }
+    .catalog-card-footer { padding: 16px 28px 22px; }
+
+    .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+    .filter-btn { padding: 9px 18px; border-radius: 999px; border: 1.5px solid var(--border-md); background: transparent; color: var(--text-2); font-size: 0.84rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--blue); color: var(--blue); background: var(--blue-dim); }
+  </style>
+</head>
+<body>
+<header class="site-header" id="site-header">
+<nav class="nav-inner">
+<a class="nav-brand" href="../index.html">
+<span class="brand-initials">MBS</span>
+<span class="brand-name">Academy</span>
+</a>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="../index.html">Início</a></li>
+<li><a class="nav-link" href="about.html">Sobre</a></li>
+<li><a class="nav-link active" href="courses.html">Formação</a></li>
+<li><a class="nav-link" href="case-studies.html">Casos de Estudo</a></li>
+<li><a class="nav-link" href="contact.html">Contacto</a></li>
+</ul>
+<div aria-label="Língua" class="lang-switch" role="group"><a data-lang-link="en" href="../../pages/courses.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang-link="pt" href="courses.html" hreflang="pt" lang="pt">PT</a></div>
+<a class="btn btn-primary nav-cta" href="contact.html">Falar connosco</a>
+<button aria-label="Abrir/fechar navegação" class="mobile-toggle" id="mobile-toggle">
+<span></span><span></span><span></span>
+</button>
+</nav>
+</header>
+<main>
+<section class="page-hero">
+<div class="container">
+<div class="page-hero-inner">
+<span class="eyebrow">Catálogo de formação</span>
+<h1>Programas práticos para líderes de finanças e operações.</h1>
+<p>Cada programa assenta em experiência real de transformação — não em teoria de sala de aula. Escolha a sua área de foco e comece a desenvolver competências que pode aplicar de imediato.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="filter-bar">
+<button aria-pressed="true" class="filter-btn active" data-filter="all" type="button">Todos os programas</button>
+<button aria-pressed="false" class="filter-btn" data-filter="finance" type="button">Finanças</button>
+<button aria-pressed="false" class="filter-btn" data-filter="process" type="button">Excelência de Processos</button>
+<button aria-pressed="false" class="filter-btn" data-filter="automation" type="button">Automação</button>
+<button aria-pressed="false" class="filter-btn" data-filter="sap" type="button">SAP</button>
+</div>
+<div class="catalog-grid">
+<a class="catalog-card reveal left" data-cat="finance" href="../courses/finance-transformation.html">
+<div class="catalog-card-top">
+<div class="catalog-card-icon">📊</div>
+<h2>Finance Transformation</h2>
+<p>Redesenhe as operações financeiras, de fábrica de relatórios a motor de decisão estratégica — orçamentação, dashboards, KPIs, IFRS, SOX e integração com SAP.</p>
+</div>
+<div class="catalog-card-meta">
+<div class="meta-item"><span class="meta-label">Nível</span><span class="meta-value">Intermédio → Avançado</span></div>
+<div class="meta-item"><span class="meta-label">Duração</span><span class="meta-value">~12 horas</span></div>
+<div class="meta-item"><span class="meta-label">Módulos</span><span class="meta-value">8 módulos</span></div>
+</div>
+<div class="catalog-card-modules">
+<h3>O que é abordado</h3>
+<div class="module-list">
+<span class="module-item">Diagnóstico e redesenho da função financeira</span>
+<span class="module-item">Contabilidade de gestão e controlo de custos</span>
+<span class="module-item">Frameworks de KPIs e desenho de dashboards</span>
+<span class="module-item">Fundamentos de compliance IFRS e SOX</span>
+<span class="module-item">Automação do reporte financeiro</span>
+</div>
+</div>
+<div class="catalog-card-footer">
+<span class="btn btn-primary" style="width:100%; justify-content:center;">Ver programa →</span>
+</div>
+</a>
+<a class="catalog-card reveal" data-cat="process" href="../courses/lean-six-sigma.html">
+<div class="catalog-card-top">
+<div class="catalog-card-icon">⚙️</div>
+<h2>Lean Six Sigma e Excelência de Processos</h2>
+<p>Dos fundamentos de 5S e Kaizen a projetos DMAIC completos. Assente em trabalho real de melhoria, no terreno e no back-office, em ambientes industriais e financeiros.</p>
+</div>
+<div class="catalog-card-meta">
+<div class="meta-item"><span class="meta-label">Nível</span><span class="meta-value">Fundamentos → Avançado</span></div>
+<div class="meta-item"><span class="meta-label">Duração</span><span class="meta-value">~16 horas</span></div>
+<div class="meta-item"><span class="meta-label">Módulos</span><span class="meta-value">10 módulos</span></div>
+</div>
+<div class="catalog-card-modules">
+<h3>O que é abordado</h3>
+<div class="module-list">
+<span class="module-item">Fundamentos Lean e eliminação de desperdício</span>
+<span class="module-item">Metodologia 5S e implementação</span>
+<span class="module-item">Eventos Kaizen e facilitação</span>
+<span class="module-item">Gestão de projetos DMAIC</span>
+<span class="module-item">Value Stream Mapping</span>
+</div>
+</div>
+<div class="catalog-card-footer">
+<span class="btn btn-primary" style="width:100%; justify-content:center;">Ver programa →</span>
+</div>
+</a>
+<a class="catalog-card reveal right" data-cat="automation" href="../courses/intelligent-automation.html">
+<div class="catalog-card-top">
+<div class="catalog-card-icon">🤖</div>
+<h2>Automação Inteligente</h2>
+<p>RPA, Power Automate, Python para finanças e VBA — com uma abordagem de quem faz, para escolher, desenhar e implementar automação que realmente gera resultados.</p>
+</div>
+<div class="catalog-card-meta">
+<div class="meta-item"><span class="meta-label">Nível</span><span class="meta-value">Intermédio → Especialista</span></div>
+<div class="meta-item"><span class="meta-label">Duração</span><span class="meta-value">~14 horas</span></div>
+<div class="meta-item"><span class="meta-label">Módulos</span><span class="meta-value">9 módulos</span></div>
+</div>
+<div class="catalog-card-modules">
+<h3>O que é abordado</h3>
+<div class="module-list">
+<span class="module-item">Seleção de processos e prontidão para automação</span>
+<span class="module-item">Fundamentos de RPA e escolha de ferramentas</span>
+<span class="module-item">Power Automate para fluxos financeiros</span>
+<span class="module-item">Fundamentos de Python para automação financeira</span>
+<span class="module-item">Construção do business case da automação</span>
+</div>
+</div>
+<div class="catalog-card-footer">
+<span class="btn btn-primary" style="width:100%; justify-content:center;">Ver programa →</span>
+</div>
+</a>
+<a class="catalog-card reveal left" data-cat="sap finance" href="../courses/sap-finance.html">
+<div class="catalog-card-top">
+<div class="catalog-card-icon">🔷</div>
+<h2>SAP Finance Operations</h2>
+<p>S/4HANA para profissionais de finanças — processos R2R, P2P, OTC, reporte financeiro e integração com Power BI, na perspetiva de quem faz.</p>
+</div>
+<div class="catalog-card-meta">
+<div class="meta-item"><span class="meta-label">Nível</span><span class="meta-value">Intermédio</span></div>
+<div class="meta-item"><span class="meta-label">Duração</span><span class="meta-value">~10 horas</span></div>
+<div class="meta-item"><span class="meta-label">Módulos</span><span class="meta-value">7 módulos</span></div>
+</div>
+<div class="catalog-card-modules">
+<h3>O que é abordado</h3>
+<div class="module-list">
+<span class="module-item">Visão geral do SAP S/4HANA para equipas financeiras</span>
+<span class="module-item">Record-to-Report (R2R) no SAP</span>
+<span class="module-item">Processo Purchase-to-Pay (P2P)</span>
+<span class="module-item">Reporte financeiro e extrações</span>
+<span class="module-item">Integração SAP + Power BI</span>
+</div>
+</div>
+<div class="catalog-card-footer">
+<span class="btn btn-primary" style="width:100%; justify-content:center;">Ver programa →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section class="section section-alt">
+<div class="container text-center">
+<div class="section-label" style="justify-content:center;">Para equipas e organizações</div>
+<h2 class="section-title" style="margin:0 auto 16px; text-align:center; max-width:none;">Precisa de formação à medida para a sua equipa?</h2>
+<p class="section-subtitle" style="margin:0 auto 32px; text-align:center;">Desenvolvo programas de formação à medida para equipas de finanças, operações e transformação — desenhados em torno das suas ferramentas, processos e desafios específicos.</p>
+<a class="btn btn-primary btn-lg" href="contact.html">Falar sobre formação para equipas</a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">MBS Academy</div>
+<p>Formação executiva em Finance Transformation, Excelência de Processos, SAP e Automação Inteligente.</p>
+<div class="footer-social">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">in</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">▶</a>
+</div>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<h2>Plataforma</h2>
+<a href="about.html">Sobre</a>
+<a href="courses.html">Formação</a>
+<a href="case-studies.html">Casos de Estudo</a>
+<a href="contact.html">Contacto</a>
+</div>
+<div class="footer-col">
+<h2>Formação</h2>
+<a href="../courses/finance-transformation.html">Finance Transformation</a>
+<a href="../courses/lean-six-sigma.html">Lean Six Sigma</a>
+<a href="../courses/intelligent-automation.html">Automação Inteligente</a>
+<a href="../courses/sap-finance.html">SAP Finance Ops</a>
+</div>
+<div class="footer-col">
+<h2>Contactos</h2>
+<a href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
+<a href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">YouTube</a>
+<a href="contact.html">Pedido de formação</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Marlon B Siqueira · MBS Academy. Todos os direitos reservados.</p>
+</div>
+</div>
+</footer>
+<script defer="" src="../../javascript/main.js"></script>
+</body>
+</html>
