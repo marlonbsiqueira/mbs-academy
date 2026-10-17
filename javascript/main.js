@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── Contact form: send in place with a status message ──
-     Uses FormSubmit's AJAX endpoint; without JS the normal POST still works. */
+     Posts to the Web3Forms API; without JS the normal POST still works. */
   document.querySelectorAll('form.js-ajax-form').forEach(form => {
     if (!window.fetch) return;
     const status = form.querySelector('.form-status');
@@ -188,11 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     form.addEventListener('submit', async e => {
       e.preventDefault();
-      if (form.elements._honey && form.elements._honey.value) return; // bot
+      if (form.elements.botcheck && form.elements.botcheck.checked) return; // bot
       button.disabled = true;
       show(MSG.sending);
       try {
-        const res = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        const res = await fetch(form.action, {
           method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form),
         });
         const data = await res.json().catch(() => ({}));

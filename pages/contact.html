@@ -164,12 +164,14 @@
           <div>
             <div class="contact-form-card reveal right">
               <h3>Send a message</h3>
-              <form action="https://formsubmit.co/advisorymbs@gmail.com" method="POST" class="js-ajax-form">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="MBS Academy inquiry">
-                <input type="hidden" name="_next" value="https://marlonbsiqueira.github.io/mbs-academy/pages/contact.html">
+              <form action="https://api.web3forms.com/submit" method="POST" class="js-ajax-form">
+                <!-- Web3Forms public access key (account advisorymbs@gmail.com) — safe to expose -->
+                <input type="hidden" name="access_key" value="5cd5f94a-fbce-43a4-a38f-fbebb897b20d">
+                <input type="hidden" name="subject" value="MBS Academy inquiry">
+                <input type="hidden" name="from_name" value="MBS Academy website">
+                <input type="hidden" name="redirect" value="https://marlonbsiqueira.github.io/mbs-academy/pages/contact.html">
                 <!-- spam trap: real visitors never see or fill this -->
-                <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+                <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 
                 <div class="form-row">
                   <div class="form-group">
