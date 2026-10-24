@@ -42,9 +42,6 @@
     .contact-option-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
     .contact-option h3 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
     .contact-option p { font-size: 0.85rem; color: var(--text-2); margin: 0; line-height: 1.6; }
-    .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
-    .contact-link { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: var(--surface); border: 1.5px solid var(--border-md); border-radius: 999px; font-size: 0.85rem; font-weight: 600; color: var(--text); transition: border-color 0.2s, color 0.2s; }
-    .contact-link:hover { border-color: var(--blue); color: var(--blue); }
 
     .contact-form-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 40px; box-shadow: var(--shadow-md); }
     .contact-form-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; font-style: italic; color: var(--text); margin-bottom: 24px; }
@@ -146,17 +143,12 @@
 </div>
 </div>
 </div>
-<div class="contact-links">
-<a class="contact-link" href="mailto:advisorymbs@gmail.com"><span>✉</span> advisorymbs@gmail.com</a>
-<a class="contact-link" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank"><span>in</span> LinkedIn</a>
-<a class="contact-link" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank"><span>▶</span> YouTube</a>
-</div>
 </div>
 <div>
 <div class="contact-form-card reveal right">
 <h3>Enviar uma mensagem</h3>
 <form action="https://api.web3forms.com/submit" class="js-ajax-form" method="POST">
-<!-- Web3Forms public access key (account advisorymbs@gmail.com) — safe to expose -->
+<!-- Web3Forms public access key — safe to expose -->
 <input name="access_key" type="hidden" value="5cd5f94a-fbce-43a4-a38f-fbebb897b20d"/>
 <input name="subject" type="hidden" value="MBS Academy inquiry"/>
 <input name="from_name" type="hidden" value="MBS Academy website"/>
@@ -195,7 +187,7 @@
 <textarea class="form-textarea" id="message" name="message" placeholder="Conte-me o que procura — a sua função, o seu desafio, a sua equipa ou o seu projeto. Quanto mais contexto partilhar, melhor posso responder." required=""></textarea>
 </div>
 <button class="btn btn-primary form-submit btn-lg" type="submit">Enviar pedido</button>
-<p class="form-note">Normalmente respondo em 1–2 dias úteis. Para pedidos urgentes, contacte-me pelo LinkedIn.</p>
+<p class="form-note">Normalmente respondo em 1–2 dias úteis.</p>
 <p aria-live="polite" class="form-status" hidden="" role="status"></p>
 </form>
 </div>
@@ -211,8 +203,8 @@
 <div class="footer-logo">MBS Academy</div>
 <p>Formação executiva em Finance Transformation, Excelência de Processos, SAP e Automação Inteligente.</p>
 <div class="footer-social">
-<a aria-label="LinkedIn" href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">in</a>
-<a aria-label="YouTube" href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">▶</a>
+<a aria-label="LinkedIn" role="img">in</a>
+<a aria-label="YouTube" role="img">▶</a>
 </div>
 </div>
 <div class="footer-links">
@@ -232,8 +224,6 @@
 </div>
 <div class="footer-col">
 <h2>Contactos</h2>
-<a href="https://www.linkedin.com/in/marlonbsiqueira/" rel="noopener" target="_blank">LinkedIn</a>
-<a href="https://www.youtube.com/@marlonbsiqueira468" rel="noopener" target="_blank">YouTube</a>
 <a href="contact.html">Pedido de formação</a>
 </div>
 </div>

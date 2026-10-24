@@ -178,8 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const MSG = {
       sending: pt ? 'A enviar…' : 'Sending…',
       ok: pt ? 'Obrigado — a sua mensagem foi enviada.' : 'Thank you — your message has been sent.',
-      error: pt ? 'Não foi possível enviar. Tente novamente ou escreva para advisorymbs@gmail.com.'
-                : 'Sorry, the message could not be sent. Please try again or email advisorymbs@gmail.com.',
+      error: pt ? 'Não foi possível enviar. Tente novamente dentro de alguns minutos.'
+                : 'Sorry, the message could not be sent. Please try again in a few minutes.',
     };
     const show = (text, isError) => {
       if (!status) return;
