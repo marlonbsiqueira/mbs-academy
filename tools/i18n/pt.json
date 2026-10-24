@@ -263,7 +263,6 @@
  "<span class=\"soon-badge\">Coming soon</span> <span class=\"sidebar-lesson-num\">1.3</span> Stakeholder mapping": "<span class=\"soon-badge\">Em breve</span> <span class=\"sidebar-lesson-num\">1.3</span> Mapeamento de stakeholders",
  "<span>in</span> LinkedIn": "<span>in</span> LinkedIn",
  "<span>▶</span> YouTube": "<span>▶</span> YouTube",
- "<span>✉</span> email-removed": "<span>✉</span> email-removed",
  "<strong>Business partnership depth:</strong> How embedded is finance in operational and strategic conversations?": "<strong>Profundidade da parceria com o negócio:</strong> quão integradas estão as finanças nas conversas operacionais e estratégicas?",
  "<strong>Data quality and availability:</strong> How trusted and accessible is your financial data?": "<strong>Qualidade e disponibilidade dos dados:</strong> quão fiáveis e acessíveis são os seus dados financeiros?",
  "<strong>Power Automate flows</strong> were built for approval workflows, exception alerts, and automated data routing between systems": "Foram construídos <strong>fluxos em Power Automate</strong> para aprovações, alertas de exceção e encaminhamento automático de dados entre sistemas",
@@ -507,7 +506,6 @@
  "I lead Finance Transformation and Intelligent Automation at a major European multinational SSC/GBS — one of the most complex shared services environments in Europe, spanning 15+ legal entities across 8+ countries. I also hold a Lean Six Sigma Green Belt, applied across global industrial and financial environments.": "Lidero a Transformação Financeira e a Automação Inteligente numa grande multinacional europeia com SSC/GBS — um dos ambientes de serviços partilhados mais complexos da Europa, com mais de 15 entidades jurídicas em mais de 8 países. Sou também Lean Six Sigma Green Belt, com aplicação em ambientes industriais e financeiros globais.",
  "I lead SAP S/4HANA Finance Transformation and Intelligent Automation at a Fortune-ranked European automotive multinational — one of the most complex SSC/GBS environments in Europe, spanning 15+ legal entities across 8+ countries. Every program I teach here is a direct translation of what I have built, deployed, and sustained at operational scale. That is the only credential that matters in this context.": "Lidero a Transformação Financeira com SAP S/4HANA e a Automação Inteligente numa multinacional europeia do setor automóvel presente no ranking Fortune — um dos ambientes SSC/GBS mais complexos da Europa, com mais de 15 entidades jurídicas em mais de 8 países. Cada programa que ensino aqui é uma tradução direta do que construí, implementei e sustentei à escala operacional. É a única credencial que importa neste contexto.",
  "I started my career at the intersection of operational finance and process improvement — building Lean Six Sigma capability at one of the world's largest mining companies, and then moving into financial strategy at a major energy distributor, where I led cost optimisation and Balanced Scorecard deployment across multiple business units.": "Comecei a carreira na interseção entre finanças operacionais e melhoria de processos — a construir capacidade Lean Six Sigma numa das maiores empresas mineiras do mundo e, depois, na estratégia financeira de um grande distribuidor de energia, onde liderei a otimização de custos e a implementação do Balanced Scorecard em várias unidades de negócio.",
- "I typically respond within 1–2 business days. For urgent inquiries, connect via LinkedIn.": "Normalmente respondo em 1–2 dias úteis. Para pedidos urgentes, contacte-me pelo LinkedIn.",
  "I work with individual professionals looking to advance their careers, leadership teams who want to upskill their finance or operations functions, and organisations going through transformation who need hands-on support.": "Trabalho com profissionais que querem progredir na carreira, equipas de liderança que querem desenvolver as suas funções de finanças ou operações e organizações em transformação que precisam de apoio prático.",
  "IFRS &amp; SOX: Practical Application": "IFRS e SOX: Aplicação Prática",
  "IFRS and SOX compliance essentials": "Fundamentos de compliance IFRS e SOX",
@@ -989,5 +987,6 @@
  "📖 ~25 min read": "📖 ~25 min de leitura",
  "🔷 SAP integration": "🔷 Integração com SAP",
  "🤖 RPA (Blue Prism · Automation Anywhere)": "🤖 RPA (Blue Prism · Automation Anywhere)",
- "🧠 Microsoft Copilot": "🧠 Microsoft Copilot"
+ "🧠 Microsoft Copilot": "🧠 Microsoft Copilot",
+ "I typically respond within 1–2 business days.": "Normalmente respondo em 1–2 dias úteis."
 }

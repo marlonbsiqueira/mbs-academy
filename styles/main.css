@@ -583,7 +583,7 @@ ul { list-style: none; }
   font-weight: 700;
   transition: background 0.2s ease, color 0.2s ease;
 }
-.footer-social a:hover { background: rgba(255,255,255,0.14); color: #fff; }
+.footer-social a[href]:hover { background: rgba(255,255,255,0.14); color: #fff; }
 
 .footer-links {
   display: grid;
